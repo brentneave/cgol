@@ -25,7 +25,7 @@ export default state => (
     <h2>
       {state.a} + {state.b} = {state.a + state.b}
     </h2>
-    <button onclick={[Init, {n:1000, x:100, y:100}]}>Init</button>
+    <button onclick={[Init, {n:10, x:20, y:20}]}>Init</button>
     <button onclick={[Tick]}>Tick</button>
     <Cells
       {...state}

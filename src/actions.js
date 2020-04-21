@@ -1,5 +1,6 @@
 // @ts-nocheck
 import liveNeighbours from './selectors/liveNeighbours';
+import allDeadNeighbours from './selectors/allDeadNeighbours';
 
 // State transitions
 export const SetA = (state, a) => ({ ...state, a })
@@ -30,5 +31,16 @@ export const Tick = (state) => ({
           liveCells: state.liveCells
         }).length
       )
+  ).concat(
+    allDeadNeighbours({ 
+      liveCells: state.liveCells,
+      width: state.width,
+      height: state.height,
+    }).filter(
+      deadCell => liveNeighbours({ 
+        ...deadCell,
+        liveCells: state.liveCells
+      }).length >= 3
+    )
   )
 })
