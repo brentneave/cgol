@@ -25,7 +25,7 @@ export default state => (
     <h2>
       {state.a} + {state.b} = {state.a + state.b}
     </h2>
-    <button onclick={[Init, {n:10, x:20, y:20}]}>Init</button>
+    <button onclick={[Init, {n:200, x:100, y:100}]}>Init</button>
     <button onclick={[Tick]}>Tick</button>
     <Cells
       {...state}
@@ -38,8 +38,8 @@ export default state => (
         )
       }
     </ul> */}
-    <pre>
+    {/* <pre>
       <code>state: {JSON.stringify(state, null, 2)}</code>
-    </pre>
+    </pre> */}
   </main>
 )

@@ -1,4 +1,4 @@
-const cellSize=10;
+const cellSize=4;
 export default ({liveCells, width, height}) =>
   <div style={{
     height: `${cellSize * width}px`,

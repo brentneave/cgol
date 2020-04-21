@@ -19,3 +19,6 @@ export const getLiveNeighbours = ({ x, y, liveCells }) => unique([
 
 
 export const unique = a => uniqWith(a, isEqual);
+
+
+export const equals = (a, b) => isEqual(a, b);

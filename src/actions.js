@@ -1,6 +1,8 @@
 // @ts-nocheck
-import liveNeighbours from './selectors/liveNeighbours';
+import isBorn from './selectors/isBorn';
+import survives from './selectors/survives';
 import allDeadNeighbours from './selectors/allDeadNeighbours';
+import liveNeighbours from './selectors/liveNeighbours';
 
 // State transitions
 export const SetA = (state, a) => ({ ...state, a })
@@ -23,24 +25,20 @@ export const Tick = (state) => ({
   ...state,
   liveCells: state.liveCells.filter(
     cell => 
-      (
-        (n) => (n === 2 || n === 3)
-      )(
-        liveNeighbours({ 
-          ...cell, 
-          liveCells: state.liveCells
-        }).length
-      )
+      survives({ 
+        ...cell, 
+        liveCells: state.liveCells
+      })
   ).concat(
     allDeadNeighbours({ 
       liveCells: state.liveCells,
       width: state.width,
       height: state.height,
     }).filter(
-      deadCell => liveNeighbours({ 
+      deadCell => isBorn({ 
         ...deadCell,
         liveCells: state.liveCells
-      }).length >= 3
+      })
     )
   )
 })
