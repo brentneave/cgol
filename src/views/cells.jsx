@@ -5,7 +5,6 @@ export default ({liveCells, width, height}) =>
     width: `${cellSize * width}px`,
     position: 'relative',
   }}>
-    {console.log('width', width)}
     {liveCells.map(
       cell => 
         <div style={{

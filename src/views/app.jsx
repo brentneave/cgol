@@ -9,7 +9,6 @@ import Cells from './cells';
 // Root application view
 export default state => (
   <main class={utils.container}>
-    {console.log(state)}
     <h1>Do more with less</h1>
     <div className={utils.grid}>
       <input
@@ -26,12 +25,11 @@ export default state => (
     <h2>
       {state.a} + {state.b} = {state.a + state.b}
     </h2>
-    <button onclick={[Init, {n:6, x:3, y:3}]}>Init</button>
+    <button onclick={[Init, {n:1000, x:100, y:100}]}>Init</button>
     <button onclick={[Tick]}>Tick</button>
     <Cells
       {...state}
     />
-    {console.log('allLiveNeighbours({ ...state })', allLiveNeighbours({ liveCells: state.liveCells }))}
     {/* <h2>Live neighbours: { allLiveNeighbours({ ...state }).length }</h2> */}
     {/* <ul>
       {

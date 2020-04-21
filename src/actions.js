@@ -23,10 +23,7 @@ export const Tick = (state) => ({
   liveCells: state.liveCells.filter(
     cell => 
       (
-        (n) => {
-          console.log('number of neighbours', n, (n === 2 || n === 3))
-          return (n === 2 || n === 3)
-        }
+        (n) => (n === 2 || n === 3)
       )(
         liveNeighbours({ 
           ...cell, 
