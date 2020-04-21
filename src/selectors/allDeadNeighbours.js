@@ -1,4 +1,4 @@
-import { equals, unique } from '../utils'
+import { cellsAreEqual, unique } from '../utils'
 
 const allDeadNeighbours = ({ liveCells, width, height }) => 
   unique(
@@ -18,7 +18,7 @@ const allDeadNeighbours = ({ liveCells, width, height }) =>
     ).flat()
   ).filter(
     deadCell => 
-      !liveCells.find(liveCell => equals(liveCell, deadCell)) &&
+      !liveCells.find(liveCell => cellsAreEqual(liveCell, deadCell)) &&
       deadCell.x > 0 &&
       deadCell.y > 0 &&
       deadCell.x < width &&
