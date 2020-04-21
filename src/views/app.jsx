@@ -1,7 +1,10 @@
-import { SetA, SetB, Init } from '/actions'
-import { decodeNumberInput } from '/utils'
+import { SetA, SetB, Init, Tick } from '/actions'
+import { decodeNumberInput, unique } from '/utils'
+import allLiveNeighbours from '/selectors/allLiveNeighbours'
+import liveNeighbours from '../selectors/liveNeighbours'
 // @ts-ignore
 import utils from '/styles/utils.css'
+import Cells from './cells';
 
 // Root application view
 export default state => (
@@ -23,7 +26,20 @@ export default state => (
     <h2>
       {state.a} + {state.b} = {state.a + state.b}
     </h2>
-    <button onclick={[Init, {n:750, x:1000, y:1000}]}>Init</button>
+    <button onclick={[Init, {n:6, x:3, y:3}]}>Init</button>
+    <button onclick={[Tick]}>Tick</button>
+    <Cells
+      {...state}
+    />
+    {console.log('allLiveNeighbours({ ...state })', allLiveNeighbours({ liveCells: state.liveCells }))}
+    {/* <h2>Live neighbours: { allLiveNeighbours({ ...state }).length }</h2> */}
+    {/* <ul>
+      {
+        allLiveNeighbours({ ...state }).map(
+          ({ x, y }) => <li>{x}, {y}</li>
+        )
+      }
+    </ul> */}
     <pre>
       <code>state: {JSON.stringify(state, null, 2)}</code>
     </pre>
