@@ -1,9 +1,14 @@
 const tick = (dispatch, { action, time }) => {
-  const interval = setInterval(
-    () => dispatch(action),
-    time
-  )
-  return () => { clearInterval(interval) }
+  var running = true;
+
+  const frame = () => {
+    dispatch(action)
+    if(running) window.requestAnimationFrame(frame)
+  }
+
+  window.requestAnimationFrame(frame)
+
+  return () => { running = false }
 }
 
 export default tick;
