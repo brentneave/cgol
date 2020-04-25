@@ -9,7 +9,7 @@ import Cells from './cells';
 export default state => (
   <main class={utils.container}>
     <h1>Conway’s Game of Life, sort of</h1>
-    <button onclick={[Init, {n:1000, x:80, y:80}]}>Init</button>    
+    <button onclick={[Init, {n:4000, x:80, y:80}]}>Init</button>    
     {
       state.isRunning
         ? [

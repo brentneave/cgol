@@ -1,4 +1,4 @@
-const cellSize=4;
+const cellSize = 4;
 export default ({cells, width, height}) =>
   <div style={{
     height: `${cellSize * width}px`,
@@ -12,6 +12,7 @@ export default ({cells, width, height}) =>
             row && 
               <div style={{
                 backgroundColor: 'black',
+                borderRadius: '2px',
                 height: `${cellSize}px`,
                 left: `${x * cellSize}px`,
                 top: `${y * cellSize}px`,
