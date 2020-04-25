@@ -1,8 +1,7 @@
 // @ts-nocheck
-import isBorn from './selectors/isBorn';
-import survives from './selectors/survives';
-import allDeadNeighbours from './selectors/allDeadNeighbours';
-import liveNeighbours from './selectors/liveNeighbours';
+
+import survive from "./selectors/survive"
+import spawn from "./selectors/spawn"
 
 // State transitions
 export const SetA = (state, a) => ({ ...state, a })
@@ -13,32 +12,25 @@ export const Init = (state, {n, x, y}) => ({
   ...state,
   width: x,
   height: y,
-  liveCells: [...Array(n)].map(
-    el => ({
-      x: Math.round(Math.random() * x),
-      y: Math.round(Math.random() * y)
-    })
-  )
+  cells: [...Array(x)].fill().map(
+    () => [...Array(y)].fill().map(
+      () => Math.random() < (n / (x * y))
+    )
+  ),
+})
+
+export const Start = (state) => ({
+  ...state,
+  isRunning: true,
+})
+
+
+export const Stop = (state) => ({
+  ...state,
+  isRunning: false,
 })
 
 export const Tick = (state) => ({
   ...state,
-  liveCells: state.liveCells.filter(
-    cell => 
-      survives({ 
-        ...cell, 
-        liveCells: state.liveCells
-      })
-  ).concat(
-    allDeadNeighbours({ 
-      liveCells: state.liveCells,
-      width: state.width,
-      height: state.height,
-    }).filter(
-      deadCell => isBorn({ 
-        ...deadCell,
-        liveCells: state.liveCells
-      })
-    )
-  )
+  cells: spawn({ cells: survive({ ...state }) })
 })
