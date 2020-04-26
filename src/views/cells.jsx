@@ -1,4 +1,3 @@
-const cellSize = 4;
 export default ({canvasId, cellSize, width, height}) =>
   <canvas 
     id={canvasId}

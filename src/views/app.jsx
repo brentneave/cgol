@@ -16,9 +16,6 @@ export default state => (
       onclick={[
         Randomise,
         {
-          chanceOfSpawn: 1/3,
-          width: 320,
-          height: 240
         }
       ]}
     >
