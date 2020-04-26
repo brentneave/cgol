@@ -2,8 +2,7 @@ import randomiseCells from '/utils/randomiseCells'
 
 const init = {
   canvasId: 'canvas',
-  cells: [],
-  cellSize: 2,
+  cellSize: 4,
   isRunning: false,
   ...randomiseCells()
 }
