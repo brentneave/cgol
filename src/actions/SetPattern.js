@@ -11,7 +11,7 @@ const SetPattern = (
       (column, x) => (
         column.map(
           (row, y) => 
-            x < pattern.length && y < pattern.length
+            x < pattern.length && y < pattern[x].length
               ? !!pattern[x][y]
               : false
         )
