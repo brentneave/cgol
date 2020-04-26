@@ -1,9 +1,9 @@
 // @ts-nocheck
 const randomiseCells = ({
-  chanceOfSpawn, 
-  width, 
-  height
-}) => ({
+  chanceOfSpawn = .75, 
+  width = 320, 
+  height = 240,
+} = {}) => ({
   width,
   height,
   cells: [...Array(width)].fill().map(

@@ -5,11 +5,7 @@ const init = {
   cells: [],
   cellSize: 2,
   isRunning: false,
-  ...randomiseCells({
-    chanceOfSpawn: 1/3, 
-    width: 320, 
-    height: 240,
-  })
+  ...randomiseCells()
 }
 
 export default init
