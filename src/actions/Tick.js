@@ -1,6 +1,6 @@
-import survive from '../utils/survive'
-import spawn from '../utils/spawn'
-import updateCanvas from '../effects/updateCanvas'
+import survive from '/utils/survive'
+import spawn from '/utils/spawn'
+import updateCanvas from '/effects/updateCanvas'
 
 
 const Tick = (state) => [

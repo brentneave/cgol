@@ -1,5 +1,5 @@
-import randomiseCells from '../utils/randomiseCells'
-import updateCanvas from '../effects/updateCanvas'
+import randomiseCells from '/utils/randomiseCells'
+import updateCanvas from '/effects/updateCanvas'
 
 
 const Randomise = (
