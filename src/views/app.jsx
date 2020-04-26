@@ -9,7 +9,6 @@ import Cells from './cells';
 // Root application view
 export default state => (
   <main class={utils.container}>
-    { console.log(state) }
     <h1>Conway’s Game of Life, sort of</h1>
     <button 
       onclick={[
