@@ -1,4 +1,4 @@
-const tick = (dispatch, { action, time }) => {
+const animationFrame = (dispatch, { action }) => {
   var running = true;
 
   const frame = () => {
@@ -11,4 +11,4 @@ const tick = (dispatch, { action, time }) => {
   return () => { running = false }
 }
 
-export default tick;
+export default animationFrame;

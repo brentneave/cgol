@@ -1,5 +1,3 @@
-// @ts-nocheck
-
 const constrain =  ({ cells, x, y }) => ({
   x: x < 0 ? cells.length + x : x % cells.length,
   y: y < 0 ? cells.length + y : y % cells[0].length,

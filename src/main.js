@@ -3,8 +3,8 @@ import { app } from 'hyperapp'
 // App init imports
 import init from '/init'
 import view from '/views/app'
-import tick from '/subscriptions/tick'
-import {Tick} from '/actions'
+import animationFrame from './subscriptions/animationFrame'
+import Tick from '/actions/Tick'
 
 import '/styles/base.css'
 
@@ -15,7 +15,7 @@ app({
   node: document.getElementById('app'),
   subscriptions: state => 
     state.isRunning 
-      ? [tick, { action: Tick, time: 16.6667 } ]
+      ? [animationFrame, { action: Tick } ]
       : []
 })
 

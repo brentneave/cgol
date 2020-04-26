@@ -1,4 +1,4 @@
-import randomiseCells from './selectors/randomiseCells'
+import randomiseCells from '/utils/randomiseCells'
 
 const init = {
   canvasId: 'canvas',
@@ -6,7 +6,7 @@ const init = {
   cellSize: 2,
   isRunning: false,
   ...randomiseCells({
-    chanceOfSpawn: 0.3333, 
+    chanceOfSpawn: 1/3, 
     width: 320, 
     height: 240,
   })

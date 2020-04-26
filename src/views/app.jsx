@@ -1,5 +1,7 @@
-import { Randomise, Start, Stop, Tick } from '/actions'
-
+import Randomise from '/actions/Randomise'
+import Start from '/actions/Start'
+import Stop from '/actions/Stop'
+import Tick from '/actions/Tick'
 // @ts-ignore
 import utils from '/styles/utils.css'
 import Cells from './cells';
@@ -13,7 +15,7 @@ export default state => (
       onclick={[
         Randomise,
         {
-          chanceOfSpawn: 0.75,
+          chanceOfSpawn: 1/3,
           width: 320,
           height: 240
         }
