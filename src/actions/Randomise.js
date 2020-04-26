@@ -12,7 +12,11 @@ const Randomise = (
 ) => [
   {
     ...state,
-    ...randomiseCells()
+    ...randomiseCells({
+        chanceOfSpawn, 
+        width, 
+        height
+      })
   },
   [[updateCanvas, state]]
 ]
