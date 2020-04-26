@@ -1,36 +1,55 @@
 // @ts-nocheck
-
-import survive from "./selectors/survive"
-import spawn from "./selectors/spawn"
-
-// State transitions
-export const SetA = (state, a) => ({ ...state, a })
-export const SetB = (state, b) => ({ ...state, b })
+import randomiseCells from './selectors/randomiseCells'
+import survive from './selectors/survive'
+import spawn from './selectors/spawn'
+import updateCanvas from './effects/updateCanvas'
 
 
-export const Init = (state, {n, x, y}) => ({
-  ...state,
-  width: x,
-  height: y,
-  cells: [...Array(x)].fill().map(
-    () => [...Array(y)].fill().map(
-      () => Math.random() < (n / (x * y))
-    )
-  ),
-})
+export const Randomise = (
+  state, 
+  {
+    chanceOfSpawn, 
+    width, 
+    height
+  }
+) => [
+  {
+    debug: console.log('Randomise'),
+    ...state,
+    ...randomiseCells({
+      chanceOfSpawn,
+      width, 
+      height
+    })
+  },
+  [[updateCanvas, state]]
+]
 
-export const Start = (state) => ({
-  ...state,
-  isRunning: true,
-})
+export const Start = (state) => [
+  {
+    debug: console.log('Start'),
+    ...state,
+    isRunning: true,
+  },
+  [[updateCanvas, state]]
+]
 
 
-export const Stop = (state) => ({
-  ...state,
-  isRunning: false,
-})
+export const Stop = (state) => [
+  {
+    debug: console.log('Stop'),
+    ...state,
+    isRunning: false,
+  },
+  [[updateCanvas, state]]
+]
 
-export const Tick = (state) => ({
-  ...state,
-  cells: spawn({ cells: survive({ ...state }) })
-})
+
+export const Tick = (state) => [
+  {
+    debug: console.log('Tick'),
+    ...state,
+    cells: spawn({ cells: survive({ ...state }) })
+  },
+  [[updateCanvas, state]]
+]

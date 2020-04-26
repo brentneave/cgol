@@ -1,5 +1,4 @@
-import { SetA, SetB, Init, Start, Stop, Tick } from '/actions'
-import getAllLiveCells from '/selectors/getAllLiveCells'
+import { Randomise, Start, Stop, Tick } from '/actions'
 
 // @ts-ignore
 import utils from '/styles/utils.css'
@@ -8,17 +7,28 @@ import Cells from './cells';
 // Root application view
 export default state => (
   <main class={utils.container}>
+    { console.log(state) }
     <h1>Conway’s Game of Life, sort of</h1>
-    <button onclick={[Init, {n:1000, x:80, y:80}]}>Init</button>    
+    <button 
+      onclick={[
+        Randomise,
+        {
+          chanceOfSpawn: 0.75,
+          width: 320,
+          height: 240
+        }
+      ]}
+    >
+      Randomise
+    </button>    
     {
       state.isRunning
         ? [
-            <button disabled>Tick</button>, 
             <button onclick={[Stop]}>Stop</button>
           ]
         : [
-            <button onclick={[Tick]}>Tick</button>,
-            <button onclick={[Start]}>Start</button>
+            <button onclick={[Start]}>Start</button>,
+            <button onclick={[Tick]}>Tick</button>
           ]
     }
     <Cells
