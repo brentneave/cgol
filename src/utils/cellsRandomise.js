@@ -2,7 +2,7 @@ import cellsMap from './cellsMap'
 
 const cellsRandomise = ({
   cells = [[]],
-  chance = 1/2,
+  chance = 1/10,
 } = {}) => 
   cellsMap({
     cells,

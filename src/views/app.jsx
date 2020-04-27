@@ -1,5 +1,5 @@
+import DropPattern from '../actions/DropPattern'
 import Randomise from '/actions/Randomise'
-import InsertPattern from '../actions/InsertPattern'
 import Reset from '/actions/Reset'
 import Start from '/actions/Start'
 import Stop from '/actions/Stop'
@@ -8,6 +8,27 @@ import Tick from '/actions/Tick'
 import utils from '/styles/utils.css'
 import getAllLiveCells from '/utils/getAllLiveCells'
 import RasterCells from '/components/RasterCells'
+
+const pattern = [
+  [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+  [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+  [0,0,0,0,1,1,1,0,0,0,1,1,1,0,0,0,0],
+  [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+  [0,0,1,0,0,0,0,1,0,1,0,0,0,0,1,0,0],
+  [0,0,1,0,0,0,0,1,0,1,0,0,0,0,1,0,0],
+  [0,0,1,0,0,0,0,1,0,1,0,0,0,0,1,0,0],
+  [0,0,0,0,1,1,1,0,0,0,1,1,1,0,0,0,0],
+  [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+  [0,0,0,0,1,1,1,0,0,0,1,1,1,0,0,0,0],
+  [0,0,1,0,0,0,0,1,0,1,0,0,0,0,1,0,0],
+  [0,0,1,0,0,0,0,1,0,1,0,0,0,0,1,0,0],
+  [0,0,1,0,0,0,0,1,0,1,0,0,0,0,1,0,0],
+  [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+  [0,0,0,0,1,1,1,0,0,0,1,1,1,0,0,0,0],
+  [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+  [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+]
+
 
 // Root application view
 export default state => (
@@ -32,7 +53,7 @@ export default state => (
     </button>
     <button
       onclick={[
-        InsertPattern,
+        DropPattern,
         {
           xOffset: Math.floor(Math.random() * state.cells.length),
           yOffset: Math.floor(Math.random() * state.cells[0].length),
@@ -89,6 +110,14 @@ export default state => (
           ]
     }
     <RasterCells
+      onmousedown={[
+        DropPattern,
+        event => ({
+          pattern,
+          xOffset: Math.round(event.offsetX / state.cellSize),
+          yOffset: Math.round(event.offsetY / state.cellSize),
+        })
+      ]}
       {...state}
     />
   </main>

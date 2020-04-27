@@ -3,7 +3,7 @@ import effectAdd from '/utils/effectAdd'
 import cellsPatternInsert from '/utils/cellsPatternInsert'
 
 
-const InsertPattern = (
+const DropPattern = (
   state,
   { 
     pattern = [[]],
@@ -15,6 +15,7 @@ const InsertPattern = (
     effect: updateCanvas,
     state: {
       ...state,
+      debug: console.log(xOffset, yOffset, pattern),
       cells: cellsPatternInsert({
         cells: state.cells,
         pattern,
@@ -24,4 +25,4 @@ const InsertPattern = (
     }
   })
 
-export default InsertPattern
+export default DropPattern
