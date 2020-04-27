@@ -1,6 +1,8 @@
-export default ({canvasId, cellSize, width, height}) =>
+import cellsCreate from "/utils/cellsCreate";
+
+export default ({canvasId, cells, cellSize}) =>
   <canvas 
     id={canvasId}
-    width={width * cellSize}
-    height={height * cellSize}
+    width={cells.length * cellSize}
+    height={cells[0].length * cellSize}
   ></canvas>

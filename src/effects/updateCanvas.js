@@ -4,26 +4,23 @@ const updateCanvas = (
   {
     canvasId,
     cells,
-    cellSize,
-    height,
-    width
+    cellSize
   }
 ) => {
   
   const canvas = document.getElementById(canvasId)
-  if(!canvas) return
-
   const context = canvas.getContext('2d')
 
   context.fillStyle = 'white'
   context.fillRect(
-    0, 
-    0, 
-    cellSize * width, 
-    cellSize * height
+    0,
+    0,
+    cellSize * cells.length, 
+    cellSize * cells[0].length
   )
 
   context.fillStyle = 'black'
+
   cells.forEach(
     (column, x ) => {
       column.forEach(

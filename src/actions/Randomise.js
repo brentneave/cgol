@@ -1,22 +1,14 @@
-import randomiseCells from '/utils/randomiseCells'
+import cellsRandomise from '../utils/cellsRandomise'
 import updateCanvas from '/effects/updateCanvas'
 
 
 const Randomise = (
   state, 
-  {
-    chanceOfSpawn, 
-    width, 
-    height
-  }
+  { chance }
 ) => [
   {
     ...state,
-    ...randomiseCells({
-        chanceOfSpawn, 
-        width, 
-        height
-      })
+    cells: cellsRandomise({ cells: state.cells, chance })
   },
   [[updateCanvas, state]]
 ]

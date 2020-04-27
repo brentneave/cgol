@@ -1,32 +1,41 @@
 import Randomise from '/actions/Randomise'
-import MergePattern from '/actions/MergePattern'
+import InsertPattern from '../actions/InsertPattern'
+import Reset from '/actions/Reset'
 import Start from '/actions/Start'
 import Stop from '/actions/Stop'
 import Tick from '/actions/Tick'
 // @ts-ignore
 import utils from '/styles/utils.css'
+import getAllLiveCells from '/utils/getAllLiveCells'
 import RasterCells from '/components/RasterCells'
-import VectorCells from '/components/VectorCells'
 
 // Root application view
 export default state => (
   <main class={utils.container}>
+    {/* { console.log(getAllLiveCells({ ...state }).length, state) } */}
     <h1>Conway’s Game of Life, sort of</h1>
     <button 
       onclick={[
+        Reset,
+        {}
+      ]}
+    >
+      Reset
+    </button>
+    <button 
+      onclick={[
         Randomise,
-        {
-        }
+        {}
       ]}
     >
       Randomise
     </button>
     <button
       onclick={[
-        MergePattern,
+        InsertPattern,
         {
-          xOffset: Math.floor(Math.random() * state.width),
-          yOffset: Math.floor(Math.random() * state.height),
+          xOffset: Math.floor(Math.random() * state.cells.length),
+          yOffset: Math.floor(Math.random() * state.cells[0].length),
           pattern: 
             [
               [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],

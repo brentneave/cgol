@@ -1,10 +1,10 @@
-import randomiseCells from '/utils/randomiseCells'
+import cellsCreate from '/utils/cellsCreate'
 
 const init = {
   canvasId: 'canvas',
   cellSize: 2,
-  isRunning: true,
-  ...randomiseCells()
+  isRunning: false,
+  cells: cellsCreate()
 }
 
 export default init
