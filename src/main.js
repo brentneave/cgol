@@ -1,10 +1,12 @@
 import { app } from 'hyperapp'
+import { onMouseMove } from '@hyperapp/events'
 
 // App init imports
 import init from '/init'
 import view from '/views/app'
-import animationFrame from './subscriptions/animationFrame'
+import animationFrame from '/subscriptions/animationFrame'
 import Tick from '/actions/Tick'
+
 
 import '/styles/base.css'
 
@@ -13,10 +15,11 @@ app({
   init, 
   view, 
   node: document.getElementById('app'),
-  subscriptions: state => 
-    state.isRunning 
-      ? [animationFrame, { action: Tick } ]
-      : []
+  subscriptions:
+    state => [
+      state.isRunning &&
+      [animationFrame, { action: Tick } ],
+    ]
 })
 
 // Enable the service worker when running the build command

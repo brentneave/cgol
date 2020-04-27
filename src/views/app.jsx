@@ -1,3 +1,5 @@
+import DragPattern from '../actions/DragPattern'
+import DragPatternCancel from '../actions/DragPatternCancel'
 import DropPattern from '../actions/DropPattern'
 import Randomise from '/actions/Randomise'
 import Reset from '/actions/Reset'
@@ -33,7 +35,7 @@ const pattern = [
 // Root application view
 export default state => (
   <main class={utils.container}>
-    {/* { console.log(getAllLiveCells({ ...state }).length, state) } */}
+    { console.log(state) }
     <h1>Conway’s Game of Life, sort of</h1>
     <button 
       onclick={[
@@ -53,51 +55,17 @@ export default state => (
     </button>
     <button
       onclick={[
-        DropPattern,
-        {
-          xOffset: Math.floor(Math.random() * state.cells.length),
-          yOffset: Math.floor(Math.random() * state.cells[0].length),
-          pattern: 
-            [
-              [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-              [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-              [0,0,0,0,1,1,1,0,0,0,1,1,1,0,0,0,0],
-              [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-              [0,0,1,0,0,0,0,1,0,1,0,0,0,0,1,0,0],
-              [0,0,1,0,0,0,0,1,0,1,0,0,0,0,1,0,0],
-              [0,0,1,0,0,0,0,1,0,1,0,0,0,0,1,0,0],
-              [0,0,0,0,1,1,1,0,0,0,1,1,1,0,0,0,0],
-              [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-              [0,0,0,0,1,1,1,0,0,0,1,1,1,0,0,0,0],
-              [0,0,1,0,0,0,0,1,0,1,0,0,0,0,1,0,0],
-              [0,0,1,0,0,0,0,1,0,1,0,0,0,0,1,0,0],
-              [0,0,1,0,0,0,0,1,0,1,0,0,0,0,1,0,0],
-              [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-              [0,0,0,0,1,1,1,0,0,0,1,1,1,0,0,0,0],
-              [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-              [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-              // [0,0,0,0,0,0,0,0,0,0,0],
-              // [0,0,0,0,0,1,0,0,0,0,0],
-              // [0,0,0,0,1,0,1,0,0,0,0],
-              // [0,0,0,0,0,0,0,0,0,0,0],
-              // [0,0,0,0,0,0,0,0,0,0,0],
-              // [0,0,0,0,1,1,1,0,0,0,0],
-              // [0,0,0,0,1,1,1,0,0,0,0],
-              // [0,0,0,0,0,1,0,0,0,0,0],
-              // [0,0,0,0,0,0,0,0,0,0,0],
-              // [0,0,0,0,0,0,0,0,0,0,0],
-              // [0,0,0,0,0,1,0,0,0,0,0],
-              // [0,0,0,0,1,1,1,0,0,0,0],
-              // [0,0,0,0,1,1,1,0,0,0,0],
-              // [0,0,0,0,0,0,0,0,0,0,0],
-              // [0,0,0,0,0,0,0,0,0,0,0],
-              // [0,0,0,0,1,0,1,0,0,0,0],
-              // [0,0,0,0,0,1,0,0,0,0,0],
-              // [0,0,0,0,0,0,0,0,0,0,0],
-            ]
-        }
-      ]}>
-      Add Pattern
+        state.draggingPattern
+          ? DragPatternCancel 
+          : DragPattern,
+        { pattern }
+      ]}
+    >
+      {
+        state.draggingPattern
+          ? 'Cancel'
+          : 'Add Pattern'
+      }
     </button>
     {
       state.isRunning

@@ -16,12 +16,14 @@ const DropPattern = (
     state: {
       ...state,
       debug: console.log(xOffset, yOffset, pattern),
-      cells: cellsPatternInsert({
-        cells: state.cells,
-        pattern,
-        xOffset,
-        yOffset,
-      })
+      cells: state.draggingPattern
+        ? cellsPatternInsert({
+            cells: state.cells,
+            pattern: state.draggingPattern,
+            xOffset,
+            yOffset,
+          })
+        : state.cells
     }
   })
 

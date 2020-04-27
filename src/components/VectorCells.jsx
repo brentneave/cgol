@@ -1,7 +1,10 @@
 import cellsMap from '/utils/cellsMap'
 
 // @ts-nocheck
-export default ({cells, cellSize}) =>
+export default ({
+  cells = [[]], 
+  cellSize = 1,
+} = {}) =>
   <svg viewBox={`0 0 ${cells.length} ${cells[0].length}`}>
     {
       cellsMap({
