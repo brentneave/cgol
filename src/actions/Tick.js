@@ -1,13 +1,16 @@
-import updateCanvas from '/effects/updateCanvas'
 import cellsTick from '../utils/cellsTick'
+import effectAdd from '../utils/effectAdd'
+import updateCanvas from '/effects/updateCanvas'
+
+const Tick = (state) => 
+  effectAdd({
+    effect: updateCanvas,
+    state: {
+      ...state,
+      cells: cellsTick({ cells: state.cells })
+    }
+  })
 
 
-const Tick = (state) => [
-  {
-    ...state,
-    cells: cellsTick({ cells: state.cells })
-  },
-  [[updateCanvas, state]]
-]
 
 export default Tick

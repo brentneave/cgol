@@ -1,5 +1,7 @@
 import updateCanvas from '/effects/updateCanvas'
+import effectAdd from '/utils/effectAdd'
 import cellsPatternInsert from '/utils/cellsPatternInsert'
+
 
 const InsertPattern = (
   state,
@@ -8,17 +10,18 @@ const InsertPattern = (
     xOffset = 0,
     yOffset = 0,
   } = {} 
-) => [
-  {
-    ...state,
-    cells: cellsPatternInsert({
-      cells: state.cells,
-      pattern,
-      xOffset,
-      yOffset,
-    })
-  },
-  [[updateCanvas, state]]
-]
+) => 
+  effectAdd({
+    effect: updateCanvas,
+    state: {
+      ...state,
+      cells: cellsPatternInsert({
+        cells: state.cells,
+        pattern,
+        xOffset,
+        yOffset,
+      })
+    }
+  })
 
 export default InsertPattern
