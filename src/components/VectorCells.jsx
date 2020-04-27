@@ -1,18 +1,19 @@
+import cellsMap from '/utils/cellsMap'
+
 // @ts-nocheck
-export default ({cells, cellSize, width, height}) =>
-  <svg viewBox={`0 0 ${width} ${height}`}>
+export default ({cells, cellSize}) =>
+  <svg viewBox={`0 0 ${cells.length} ${cells[0].length}`}>
     {
-      cells.map(
-        (column, x) => 
-          column.map(
-            (row, y) => 
-              row && <rect
-                x={x}
-                y={y}
-                width={1}
-                height={1}
-              />
-          )
-      )
+      cellsMap({
+        cells,
+        f: ({ cell, x, y }) =>
+          cell && 
+            <rect
+              x={x}
+              y={y}
+              width={1}
+              height={1}
+            />
+      })
     }
   </svg>

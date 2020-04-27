@@ -1,7 +1,7 @@
 // @ts-nocheck
 const cellsCreate = ({
-  width = 17, 
-  height = 17,
+  width = 320, 
+  height = 240,
 } = {}) => 
   [...Array(width)].fill().map(
     () => [...Array(height)].fill().map(

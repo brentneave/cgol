@@ -1,11 +1,11 @@
 import updateCanvas from '/effects/updateCanvas'
-import tickAllCells from '/utils/tickAllCells'
+import cellsTick from '../utils/cellsTick'
 
 
 const Tick = (state) => [
   {
     ...state,
-    cells: tickAllCells({ cells: state.cells })
+    cells: cellsTick({ cells: state.cells })
   },
   [[updateCanvas, state]]
 ]

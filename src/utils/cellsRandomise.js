@@ -1,12 +1,12 @@
+import cellsMap from './cellsMap'
+
 const cellsRandomise = ({
   cells = [[]],
   chance = 1/2,
 } = {}) => 
-  cells.map(
-    (column) => 
-      column.map(
-        () => Math.random() < chance
-      )
-  )
+  cellsMap({
+    cells,
+    f: () => Math.random() < chance
+  })
 
 export default cellsRandomise
