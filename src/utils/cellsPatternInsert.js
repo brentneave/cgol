@@ -9,8 +9,8 @@ const cellsPatternInsert = ({
   cellsMap({
     cells,
     f: ({ cell, x, y }) => 
-      x > xOffset &&
-      y > yOffset &&
+      x >= xOffset &&
+      y >= yOffset &&
       x < xOffset + pattern.length && 
       y < yOffset + pattern[0].length
         ? pattern[x - xOffset][y - yOffset]
