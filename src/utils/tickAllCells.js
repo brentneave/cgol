@@ -9,6 +9,6 @@ const tickAllCells = ({ cells }) => cells.map(
             ? cellShouldSurvive({ cells, x, y})
             : cellShouldSpawn({ cells, x, y})
       )
-  )
+)
 
 export default tickAllCells
