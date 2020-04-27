@@ -13,15 +13,4 @@ export default ({
     width={cells.length * cellSize}
     height={cells[0].length * cellSize}
     onmousedown={onmousedown}
-    style={
-      draggingPattern
-        ? {
-            cursor: `url('data:image/svg+xml;utf8,'${
-              <VectorCells
-                cells={draggingPattern}
-              />
-            })'`
-          }
-        : {}
-    }
   ></canvas>

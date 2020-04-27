@@ -1,10 +1,13 @@
 import { app } from 'hyperapp'
-import { onMouseMove } from '@hyperapp/events'
 
 // App init imports
 import init from '/init'
 import view from '/views/app'
+
 import animationFrame from '/subscriptions/animationFrame'
+import mouseMove from '/subscriptions/mouseMove'
+
+import MouseMoved from '/actions/MouseMoved'
 import Tick from '/actions/Tick'
 
 
@@ -18,7 +21,9 @@ app({
   subscriptions:
     state => [
       state.isRunning &&
-      [animationFrame, { action: Tick } ],
+        [animationFrame, { action: Tick } ],
+      state.draggingPattern !== undefined &&
+        [mouseMove, { action: MouseMoved }]
     ]
 })
 

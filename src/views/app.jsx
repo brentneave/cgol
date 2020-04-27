@@ -10,32 +10,29 @@ import Tick from '/actions/Tick'
 import utils from '/styles/utils.css'
 import getAllLiveCells from '/utils/getAllLiveCells'
 import RasterCells from '/components/RasterCells'
+import VectorCells from '/components/VectorCells'
 
 const pattern = [
-  [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-  [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-  [0,0,0,0,1,1,1,0,0,0,1,1,1,0,0,0,0],
-  [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-  [0,0,1,0,0,0,0,1,0,1,0,0,0,0,1,0,0],
-  [0,0,1,0,0,0,0,1,0,1,0,0,0,0,1,0,0],
-  [0,0,1,0,0,0,0,1,0,1,0,0,0,0,1,0,0],
-  [0,0,0,0,1,1,1,0,0,0,1,1,1,0,0,0,0],
-  [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-  [0,0,0,0,1,1,1,0,0,0,1,1,1,0,0,0,0],
-  [0,0,1,0,0,0,0,1,0,1,0,0,0,0,1,0,0],
-  [0,0,1,0,0,0,0,1,0,1,0,0,0,0,1,0,0],
-  [0,0,1,0,0,0,0,1,0,1,0,0,0,0,1,0,0],
-  [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-  [0,0,0,0,1,1,1,0,0,0,1,1,1,0,0,0,0],
-  [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-  [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+  [0,0,1,1,1,0,0,0,1,1,1,0,0,],
+  [0,0,0,0,0,0,0,0,0,0,0,0,0,],
+  [1,0,0,0,0,1,0,1,0,0,0,0,1,],
+  [1,0,0,0,0,1,0,1,0,0,0,0,1,],
+  [1,0,0,0,0,1,0,1,0,0,0,0,1,],
+  [0,0,1,1,1,0,0,0,1,1,1,0,0,],
+  [0,0,0,0,0,0,0,0,0,0,0,0,0,],
+  [0,0,1,1,1,0,0,0,1,1,1,0,0,],
+  [1,0,0,0,0,1,0,1,0,0,0,0,1,],
+  [1,0,0,0,0,1,0,1,0,0,0,0,1,],
+  [1,0,0,0,0,1,0,1,0,0,0,0,1,],
+  [0,0,0,0,0,0,0,0,0,0,0,0,0,],
+  [0,0,1,1,1,0,0,0,1,1,1,0,0,],
 ]
 
 
 // Root application view
 export default state => (
   <main class={utils.container}>
-    { console.log(state) }
+    {/* { console.log(state) } */}
     <h1>Conway’s Game of Life, sort of</h1>
     <button 
       onclick={[
@@ -88,5 +85,24 @@ export default state => (
       ]}
       {...state}
     />
+    {
+      state.draggingPattern !== undefined && 
+      <div 
+        style={{
+          width: `100px`,
+          height: `100px`,
+          position: 'fixed',
+          left: 0,
+          pointerEvents: 'none',
+          top: 0,
+          transform: `translate(${state.mouse.x}px, ${state.mouse.y}px)`,
+        }}
+      >
+        <VectorCells
+          cells={pattern}
+          cellSize={state.cellSize}
+        />
+      </div>
+    }
   </main>
 )
