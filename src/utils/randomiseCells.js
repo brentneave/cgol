@@ -1,7 +1,7 @@
 // @ts-nocheck
 const randomiseCells = ({
-  chanceOfSpawn = 1/2, 
-  width = 480, 
+  chanceOfSpawn = 1/5, 
+  width = 320, 
   height = 320,
 } = {}) => ({
   width,

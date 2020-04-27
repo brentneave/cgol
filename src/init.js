@@ -3,7 +3,7 @@ import randomiseCells from '/utils/randomiseCells'
 const init = {
   canvasId: 'canvas',
   cellSize: 2,
-  isRunning: false,
+  isRunning: true,
   ...randomiseCells()
 }
 

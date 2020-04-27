@@ -11,6 +11,8 @@ const updateCanvas = (
 ) => {
   
   const canvas = document.getElementById(canvasId)
+  if(!canvas) return
+
   const context = canvas.getContext('2d')
 
   context.fillStyle = 'white'

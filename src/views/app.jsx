@@ -1,5 +1,5 @@
 import Randomise from '/actions/Randomise'
-import SetPattern from '/actions/SetPattern'
+import MergePattern from '/actions/MergePattern'
 import Start from '/actions/Start'
 import Stop from '/actions/Stop'
 import Tick from '/actions/Tick'
@@ -11,7 +11,6 @@ import VectorCells from '/components/VectorCells'
 // Root application view
 export default state => (
   <main class={utils.container}>
-    {console.log(state)}
     <h1>Conway’s Game of Life, sort of</h1>
     <button 
       onclick={[
@@ -24,8 +23,10 @@ export default state => (
     </button>
     <button
       onclick={[
-        SetPattern,
+        MergePattern,
         {
+          xOffset: Math.floor(Math.random() * state.width),
+          yOffset: Math.floor(Math.random() * state.height),
           pattern: 
             [
               [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
@@ -66,7 +67,7 @@ export default state => (
             ]
         }
       ]}>
-      Set Pattern
+      Add Pattern
     </button>
     {
       state.isRunning
@@ -78,7 +79,7 @@ export default state => (
             <button onclick={[Tick]}>Tick</button>
           ]
     }
-    <VectorCells
+    <RasterCells
       {...state}
     />
   </main>
