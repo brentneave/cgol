@@ -21,7 +21,7 @@ const ControlBar = ({
           ]
     }
     <button class={styles.controlBarButton} onclick={[ Reset, {} ]}>
-      Reset
+      Clear
     </button>
     <button class={styles.controlBarButton} onclick={[ Randomise, {} ]}>
       Random
