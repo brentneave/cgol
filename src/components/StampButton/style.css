@@ -1,0 +1,10 @@
+.stampButton,
+.stampButtonSelected {
+  padding: 0.5rem;
+  width: 4rem;
+}
+
+.stampButtonSelected {
+  background-color: #fff;
+  color: #111;
+}

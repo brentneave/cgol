@@ -14,7 +14,8 @@
     "@hyperapp/events": "^0.0.4",
     "hyperapp": "^2.0.4",
     "lodash": "^4.17.15",
-    "sanitize.css": "^11.0.0"
+    "sanitize.css": "^11.0.0",
+    "style.css": "^1.0.0"
   },
   "devDependencies": {
     "@babel/core": "^7.9.0",

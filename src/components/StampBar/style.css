@@ -1,0 +1,13 @@
+.stampBar {
+  align-items: stretch;
+  display: flex;
+}
+
+.stampBarButton {
+  align-items: stretch;
+  display: flex;
+}
+
+.stampBarButton:not(:last-child) {
+  margin-right: 0.5rem;
+}

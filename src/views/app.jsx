@@ -7,99 +7,86 @@ import Start from '/actions/Start'
 import Stop from '/actions/Stop'
 import Tick from '/actions/Tick'
 
+import AppLayout from '/components/AppLayout'
+import CellsCursor from '/components/CellsCursor'
+import ControlBar from '/components/ControlBar'
 import RasterCells from '/components/RasterCells'
 import StampBar from '/components/StampBar'
-import VectorCells from '/components/VectorCells'
-
-import gosperGliderGun from '/stamps/gosperGliderGun'
-import pulsar from '/stamps/pulsar'
 
 // @ts-ignore
 import utils from '/styles/utils.css'
 
-const pattern = gosperGliderGun
-
 
 // Root application view
-export default state => (
-  <main class={utils.container}>
-    {/* { console.log(state) } */}
-    <h1>Conway’s Game of Life, sort of</h1>
-    <button 
-      onclick={[
-        Reset,
-        {}
-      ]}
-    >
-      Reset
-    </button>
-    <button 
-      onclick={[
-        Randomise,
-        {}
-      ]}
-    >
-      Randomise
-    </button>
-    <button
-      onclick={[
-        state.draggingPattern
-          ? DragPatternCancel 
-          : DragPattern,
-        { pattern }
-      ]}
-    >
-      {
-        state.draggingPattern
-          ? 'Cancel'
-          : 'Add Pattern'
-      }
-    </button>
-    {
-      state.isRunning
-        ? [
-            <button onclick={[Stop]}>Stop</button>
-          ]
-        : [
-            <button onclick={[Start]}>Start</button>,
-            <button onclick={[Tick]}>Tick</button>
-          ]
+export default ({
+  canvasId, 
+  cells,
+  cellSize,
+  draggingPattern,
+  isRunning,
+  mouse,
+}) =>
+  <AppLayout
+    main={
+      <RasterCells
+        canvasId={canvasId}
+        cells={cells}
+        cellSize={cellSize}
+        draggingPattern={draggingPattern}
+        DropPattern={DropPattern}
+      />
     }
-    <RasterCells
-      onmousedown={[
-        DropPattern,
-        event => ({
-          pattern,
-          xOffset: Math.round(event.offsetX / state.cellSize),
-          yOffset: Math.round(event.offsetY / state.cellSize),
-        })
-      ]}
-      {...state}
-    />
-    <StampBar DragPattern={DragPattern} />
-    {
-      state.draggingPattern !== undefined && 
-      <div 
-        style={{
-          width: `100px`,
-          height: `100px`,
-          position: 'fixed',
-          left: 0,
-          pointerEvents: 'none',
-          top: 0,
-          transform: `translate(${
-            Math.round(state.mouse.x / state.cellSize) * state.cellSize
-          }px, ${
-            Math.round(state.mouse.y / state.cellSize) * state.cellSize
-          }px)`,
-        }}
-      >
-        {console.log('dragging: ', state.draggingPattern)}
-        <VectorCells
-          cells={pattern}
-          cellSize={state.cellSize}
-        />
-      </div>
+    bottomLeft={
+      <StampBar 
+        draggingPattern={draggingPattern}
+        DragPattern={DragPattern}
+        DragPatternCancel={DragPatternCancel}
+      />
     }
-  </main>
-)
+    bottomRight={
+      <ControlBar
+        isRunning={isRunning}
+        Reset={Reset}
+        Randomise={Randomise}
+        Start={Start}
+        Stop={Stop}
+        Tick={Tick}
+      />
+    }
+    cursor={
+      <CellsCursor
+        cellSize={cellSize}
+        draggingPattern={draggingPattern}
+        mouse={mouse}
+      />
+    }
+  />
+  // <main class={utils.container}>
+  
+    
+  //   {
+  //     draggingPattern !== undefined && 
+  //     <div 
+  //       style={{
+  //         width: `100px`,
+  //         height: `100px`,
+  //         position: 'fixed',
+  //         left: 0,
+  //         pointerEvents: 'none',
+  //         top: 0,
+  //         transform: `translate(${
+  //           Math.round(mouse.x / cellSize) * cellSize
+  //         }px, ${
+  //           Math.round(mouse.y / cellSize) * cellSize
+  //         }px)`,
+  //       }}
+  //     >
+  //       {console.log('dragging: ', draggingPattern)}
+  //       <VectorCells
+  //         cells={draggingPattern}
+  //         cellSize={cellSize}
+  //       />
+  //     </div>
+  //   }
+  // </main>
+

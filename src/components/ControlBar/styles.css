@@ -1,0 +1,16 @@
+.controlBar {
+  align-items: flex-end;
+  display: flex;
+}
+
+.controlBarButton {
+  font-size: .75rem;
+  font-weight: normal;
+  letter-spacing: 0.075em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.controlBarButton:not(:last-child) {
+  margin-right: 0.5rem;
+}

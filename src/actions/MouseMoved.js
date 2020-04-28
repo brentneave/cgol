@@ -1,11 +1,11 @@
 const MouseMoved = (
   state,
-  { pageX, pageY }
+  { clientX, clientY }
 ) => ({
   ...state,
   mouse: {
-    x: pageX,
-    y: pageY,
+    x: clientX,
+    y: clientY,
   }
 })
 

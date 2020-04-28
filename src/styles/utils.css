@@ -4,9 +4,11 @@
 
 /* Max-width container */
 .container {
-  width: 90vw;
-  max-width: 960px;
-  margin: 0 auto;
+  bottom: 0;
+  left: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
 }
 
 /* Responsive grid */
