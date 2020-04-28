@@ -5,6 +5,8 @@ import StampButton from '/components/StampButton'
 import gosperGliderGun from '/stamps/gosperGliderGun'
 import pulsar from '/stamps/pulsar'
 import rPentomino from '/stamps/rPentomino'
+import TwoEngineCorderShip from '/stamps/TwoEngineCorderShip'
+
 
 import style from './style.css'
 
@@ -33,7 +35,8 @@ const StampBar = ({
         gosperGliderGun180,
         gosperGliderGun270,
         pulsar,
-        rPentomino
+        rPentomino,
+        TwoEngineCorderShip
       ].map(
         stamp => 
           <div class={style.stampBarButton}>
