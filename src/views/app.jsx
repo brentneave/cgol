@@ -95,7 +95,11 @@ export default state => (
           left: 0,
           pointerEvents: 'none',
           top: 0,
-          transform: `translate(${state.mouse.x}px, ${state.mouse.y}px)`,
+          transform: `translate(${
+            Math.round(state.mouse.x / state.cellSize) * state.cellSize
+          }px, ${
+            Math.round(state.mouse.y / state.cellSize) * state.cellSize
+          }px)`,
         }}
       >
         <VectorCells
