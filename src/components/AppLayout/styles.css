@@ -19,10 +19,14 @@
 }
 
 .appLayout__bottom {
+  bottom: 0;
   display: flex;
   flex: none;
   justify-content: space-between;
+  left: 0;
   padding: 0.5em;
+  position: absolute;
+  right: 0;
 }
 
 .appLayout__bottomLeft, 
