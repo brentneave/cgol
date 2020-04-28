@@ -6,27 +6,18 @@ import Reset from '/actions/Reset'
 import Start from '/actions/Start'
 import Stop from '/actions/Stop'
 import Tick from '/actions/Tick'
-// @ts-ignore
-import utils from '/styles/utils.css'
-import getAllLiveCells from '/utils/getAllLiveCells'
+
 import RasterCells from '/components/RasterCells'
+import StampBar from '/components/StampBar'
 import VectorCells from '/components/VectorCells'
 
-const pattern = [
-  [0,0,1,1,1,0,0,0,1,1,1,0,0,],
-  [0,0,0,0,0,0,0,0,0,0,0,0,0,],
-  [1,0,0,0,0,1,0,1,0,0,0,0,1,],
-  [1,0,0,0,0,1,0,1,0,0,0,0,1,],
-  [1,0,0,0,0,1,0,1,0,0,0,0,1,],
-  [0,0,1,1,1,0,0,0,1,1,1,0,0,],
-  [0,0,0,0,0,0,0,0,0,0,0,0,0,],
-  [0,0,1,1,1,0,0,0,1,1,1,0,0,],
-  [1,0,0,0,0,1,0,1,0,0,0,0,1,],
-  [1,0,0,0,0,1,0,1,0,0,0,0,1,],
-  [1,0,0,0,0,1,0,1,0,0,0,0,1,],
-  [0,0,0,0,0,0,0,0,0,0,0,0,0,],
-  [0,0,1,1,1,0,0,0,1,1,1,0,0,],
-]
+import gosperGliderGun from '/stamps/gosperGliderGun'
+import pulsar from '/stamps/pulsar'
+
+// @ts-ignore
+import utils from '/styles/utils.css'
+
+const pattern = gosperGliderGun
 
 
 // Root application view
@@ -85,6 +76,7 @@ export default state => (
       ]}
       {...state}
     />
+    <StampBar DragPattern={DragPattern} />
     {
       state.draggingPattern !== undefined && 
       <div 
@@ -102,6 +94,7 @@ export default state => (
           }px)`,
         }}
       >
+        {console.log('dragging: ', state.draggingPattern)}
         <VectorCells
           cells={pattern}
           cellSize={state.cellSize}

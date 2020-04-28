@@ -15,7 +15,6 @@ const DropPattern = (
     effect: updateCanvas,
     state: {
       ...state,
-      debug: console.log(xOffset, yOffset, pattern),
       cells: state.draggingPattern
         ? cellsPatternInsert({
             cells: state.cells,

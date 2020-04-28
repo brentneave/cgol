@@ -22,8 +22,7 @@ app({
     state => [
       state.isRunning &&
         [animationFrame, { action: Tick } ],
-      state.draggingPattern !== undefined &&
-        [mouseMove, { action: MouseMoved }]
+      [mouseMove, { action: MouseMoved }]
     ]
 })
 
