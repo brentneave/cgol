@@ -2,14 +2,14 @@
 import styles from './styles.css'
 
 const AppLayout=({
-  main,
+  canvas,
   bottomLeft,
   bottomRight,
   cursor
 }) =>
   <div class={styles.appLayout}>
-    <div class={styles.appLayout__main}>
-      {main}
+    <div class={styles.appLayout__canvas}>
+      {canvas}
     </div>
     <div class={styles.appLayout__bottom}>
       <div class={styles.appLayout__bottomLeft}>

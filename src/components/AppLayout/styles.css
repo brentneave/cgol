@@ -1,5 +1,5 @@
 .appLayout {
-  background-color: #f8f8f8;
+  background-color: white;
   display: flex;
   flex-direction: column;
   position: fixed;
@@ -10,23 +10,16 @@
   top: 0;
 }
 
-.appLayout__main {
-  align-items: center;
-  display: flex;
+.appLayout__canvas {
   flex: auto;
-  justify-content: center;
-  overflow-y: auto;
+  position: relative;
 }
 
 .appLayout__bottom {
-  bottom: 0;
   display: flex;
   flex: none;
   justify-content: space-between;
-  left: 0;
   padding: 0.5em;
-  position: absolute;
-  right: 0;
 }
 
 .appLayout__bottomLeft, 
