@@ -1,6 +1,6 @@
 import cellsMap from './cellsMap'
 
-const cellsPatternInsert = ({ 
+const cellsMerge = ({ 
   cells = [[]],
   pattern = [[]],
   xOffset = 0,
@@ -17,4 +17,4 @@ const cellsPatternInsert = ({
         : cell
   })
 
-export default cellsPatternInsert
+export default cellsMerge

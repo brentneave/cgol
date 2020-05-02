@@ -1,6 +1,6 @@
 import updateCanvas from '/effects/updateCanvas'
 import effectAdd from '/utils/effectAdd'
-import cellsPatternInsert from '/utils/cellsPatternInsert'
+import cellsMerge from '../utils/cellsMerge'
 
 
 const DropPattern = (
@@ -16,7 +16,7 @@ const DropPattern = (
     state: {
       ...state,
       cells: state.draggingPattern
-        ? cellsPatternInsert({
+        ? cellsMerge({
             cells: state.cells,
             pattern: state.draggingPattern,
             xOffset,
