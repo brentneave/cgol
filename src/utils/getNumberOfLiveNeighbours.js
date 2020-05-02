@@ -1,4 +1,3 @@
-// @ts-nocheck
 import getCellNeighbours from "./getCellNeighbours";
 import cellsMap from "./cellsMap";
 
