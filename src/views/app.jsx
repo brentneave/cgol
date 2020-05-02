@@ -28,8 +28,7 @@ export default ({
   neighbours,
 }) =>
   <AppLayout
-    main={[
-      console.log(cells.length, neighbours.length),
+    canvas={
       <RasterCells
         canvasId={canvasId}
         cells={cells}
@@ -37,7 +36,7 @@ export default ({
         draggingPattern={draggingPattern}
         DropPattern={DropPattern}
       />
-    ]}
+    }
     bottomLeft={
       <StampBar 
         draggingPattern={draggingPattern}
