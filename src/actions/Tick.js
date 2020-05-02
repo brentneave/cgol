@@ -7,7 +7,7 @@ const Tick = (state) =>
     effect: updateCanvas,
     state: {
       ...state,
-      cells: cellsTick({ cells: state.cells })
+      cells: cellsTick({ cells: state.cells, neighbours: state.neighbours })
     }
   })
 

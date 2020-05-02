@@ -2,14 +2,15 @@ import cellsMap from './cellsMap'
 import cellShouldSpawn from './cellShouldSpawn'
 import cellShouldSurvive from './cellShouldSurvive'
 
-const cellTick = ({ cells, cell, x, y }) => cell
-  ? cellShouldSurvive({ cells, x, y})
-  : cellShouldSpawn({ cells, x, y})
+const cellTick = neighbours => ({ cells, cell, x, y }) => 
+  cell
+    ? cellShouldSurvive({ cells, neighbours, x, y})
+    : cellShouldSpawn({ cells, neighbours, x, y})
 
-const cellsTick = ({ cells }) => 
-  cellsMap({
+const cellsTick = ({ cells, neighbours }) => {
+  return cellsMap({
     cells,
-    f: cellTick
+    f: cellTick(neighbours)
   })
-
+}
 export default cellsTick

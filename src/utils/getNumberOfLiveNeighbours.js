@@ -1,18 +1,13 @@
 // @ts-nocheck
 import getCellNeighbours from "./getCellNeighbours";
+import cellsMap from "./cellsMap";
 
-const getNumberOfLiveNeighbours = ({ cells, x, y }) => {
-  var count = 0
-  const neighbours = getCellNeighbours({ cells, x, y })
-  for(var i = 0; i< neighbours.length; i++) {
-    if(cells[neighbours[i].x][neighbours[i].y]) count ++
+const getNumberOfLiveNeighbours = ({ cells, neighbours, x, y }) => {
+  var n = 0
+  for(var i = 0; i< neighbours[x][y].length; i++) {
+    if(cells[neighbours[x][y][i].x][neighbours[x][y][i].y]) n++
   }
-  return count
+  return n
 }
-  // getCellNeighbours({ cells, x, y }).map(
-  //   neighbour => cells[neighbour.x][neighbour.y]
-  // ).filter(
-  //   cell => cell
-  // ).length
 
 export default getNumberOfLiveNeighbours
