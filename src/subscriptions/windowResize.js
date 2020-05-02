@@ -1,4 +1,4 @@
-const windowResize = (dispatch, { action, canvasId}) => {
+const windowResize = (dispatch, { action, canvasId }) => {
 
   var running = true
 

@@ -6,8 +6,11 @@ import view from '/views/app'
 
 import animationFrame from '/subscriptions/animationFrame'
 import mouseMove from '/subscriptions/mouseMove'
+import windowResize from '/subscriptions/windowResize'
+
 
 import MouseMoved from '/actions/MouseMoved'
+import SetSize from '/actions/SetSize'
 import Tick from '/actions/Tick'
 
 
@@ -22,7 +25,8 @@ app({
     state => [
       state.isRunning &&
         [animationFrame, { action: Tick } ],
-      [mouseMove, { action: MouseMoved }]
+        [mouseMove, { action: MouseMoved }],
+        [windowResize, { action: SetSize }]
     ]
 })
 
