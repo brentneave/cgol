@@ -1,4 +1,10 @@
 .rasterCells {
   background-color: white;
-  box-shadow: 0 8px 16px rgba(0,0,0,0.0625);
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 100% !important;
+  height: 100% !important;
 }
