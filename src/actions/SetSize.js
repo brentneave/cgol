@@ -1,3 +1,4 @@
+import cacheNeighbours from '/utils/cacheNeighbours'
 import cellsCreate from '/utils/cellsCreate'
 import cellsMerge from '/utils/cellsMerge'
 import effectAdd from '../utils/effectAdd'
@@ -9,7 +10,7 @@ const SetSize = (state, {
 } = {}) => 
   effectAdd({
     effect: updateCanvas,
-    state: {
+    state: cacheNeighbours({
       ...state,
       // cellSize: Math.max(3, Math.ceil(width / 384)),
       cells: cellsMerge({ 
@@ -25,7 +26,7 @@ const SetSize = (state, {
           ((height / state.cellSize) - state.cells[0].length) / 2
         ),
       })
-    }
+    })
   })
 
 export default SetSize

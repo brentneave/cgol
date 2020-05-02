@@ -26,7 +26,7 @@ app({
       state.isRunning &&
         [animationFrame, { action: Tick } ],
         [mouseMove, { action: MouseMoved }],
-        [windowResize, { action: SetSize }]
+        [windowResize, { action: SetSize, canvasId: state.canvasId }]
     ]
 })
 
