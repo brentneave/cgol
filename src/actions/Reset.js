@@ -5,19 +5,15 @@ import updateCanvas from '/effects/updateCanvas'
 
 
 const Reset = (
-  state, 
-  {
-    width, 
-    height
-  }
+  state
 ) => 
   effectAdd(
     updateCanvas,
     cacheNeighbours({
       ...state,
       cells: cellsCreate({
-        width, 
-        height
+        width: state.cells.length, 
+        height: state.cells[0].length,
       })
     })
   )
