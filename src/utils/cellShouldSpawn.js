@@ -6,7 +6,7 @@ const cellShouldSpawn = ({ cells, neighbours, x, y }) =>
   cells[x][y] 
     ? true
     : shouldSpawn(
-        getNumberOfLiveNeighbours({ cells, neighbours, x, y })
+        getNumberOfLiveNeighbours(cells, neighbours, x, y)
       )
 
 export default cellShouldSpawn
