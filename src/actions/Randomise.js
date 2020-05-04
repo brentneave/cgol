@@ -7,12 +7,12 @@ const Randomise = (
   state, 
   { chance }
 ) => 
-  effectAdd({
-    effect: updateCanvas,
-    state: {
+  effectAdd(
+    updateCanvas,
+    {
       ...state,
       cells: cellsRandomise({ cells: state.cells, chance })
     }
-  })
+  )
 
 export default Randomise

@@ -3,13 +3,13 @@ import effectAdd from '../utils/effectAdd'
 import updateCanvas from '/effects/updateCanvas'
 
 const Tick = (state) => 
-  effectAdd({
-    effect: updateCanvas,
-    state: {
+  effectAdd(
+    updateCanvas,
+    {
       ...state,
       cells: cellsTick(state.cells, state.neighbours)
     }
-  })
+  )
 
 
 

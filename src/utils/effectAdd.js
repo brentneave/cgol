@@ -1,7 +1,7 @@
-const effectAdd = ({
+const effectAdd = (
   effect,
   state
-}) => [
+) => [
   state,
   [[effect, state]]
 ]

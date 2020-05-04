@@ -8,9 +8,9 @@ const SetSize = (state, {
   width = 480,
   height = 320,
 } = {}) => 
-  effectAdd({
-    effect: updateCanvas,
-    state: cacheNeighbours({
+  effectAdd(
+    updateCanvas,
+    cacheNeighbours({
       ...state,
       // cellSize: Math.max(3, Math.ceil(width / 384)),
       cells: cellsMerge({ 
@@ -27,6 +27,6 @@ const SetSize = (state, {
         ),
       })
     })
-  })
+  )
 
 export default SetSize

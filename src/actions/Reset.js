@@ -11,15 +11,15 @@ const Reset = (
     height
   }
 ) => 
-  effectAdd({
-    effect: updateCanvas,
-    state: cacheNeighbours({
+  effectAdd(
+    updateCanvas,
+    cacheNeighbours({
       ...state,
       cells: cellsCreate({
         width, 
         height
       })
     })
-  })
+  )
 
 export default Reset

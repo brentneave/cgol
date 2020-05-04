@@ -11,9 +11,9 @@ const DropPattern = (
     yOffset = 0,
   } = {} 
 ) => 
-  effectAdd({
-    effect: updateCanvas,
-    state: {
+  effectAdd(
+    updateCanvas,
+    {
       ...state,
       cells: state.draggingPattern
         ? cellsMerge({
@@ -24,6 +24,6 @@ const DropPattern = (
           })
         : state.cells
     }
-  })
+  )
 
 export default DropPattern
