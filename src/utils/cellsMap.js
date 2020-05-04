@@ -6,7 +6,7 @@ const cellsMap = ({
     (column, x) =>
       column.map(
         (cell, y) =>
-          f( cells, cell, x, y )
+          f(cells, cell, x, y)
       )
   )
 
