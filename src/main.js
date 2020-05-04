@@ -17,7 +17,7 @@ import Tick from '/actions/Tick'
 import '/styles/base.css'
 
 // Initialize the app on the #app div
-app({ 
+app({
   init, 
   view, 
   node: document.getElementById('app'),

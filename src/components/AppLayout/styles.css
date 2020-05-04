@@ -16,10 +16,12 @@
 }
 
 .appLayout__bottom {
+  box-shadow: 0 0 8px rgba(0,0,0,.2);
   display: flex;
   flex: none;
   justify-content: space-between;
   padding: 0.5em;
+  z-index: 1;
 }
 
 .appLayout__bottomLeft, 
