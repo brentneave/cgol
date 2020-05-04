@@ -8,7 +8,7 @@ const cellsMerge = ({
 } = {}) => 
   cellsMap({
     cells,
-    f: ({ cell, x, y }) => 
+    f: (cells, cell, x, y) => 
       x >= xOffset &&
       y >= yOffset &&
       x < xOffset + pattern.length && 

@@ -5,7 +5,7 @@ const cacheNeighbours = state => ({
   ...state,
   neighbours: cellsMap({
     cells: state.cells,
-    f: ({ cells, cell, x, y }) => 
+    f: ( cells, cell, x, y ) => 
       getCellNeighbours({ cells, x, y })
   })
 })

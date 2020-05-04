@@ -1,6 +1,3 @@
-import getCellNeighbours from "./getCellNeighbours";
-import cellsMap from "./cellsMap";
-
 const getNumberOfLiveNeighbours = ({ cells, neighbours, x, y }) => {
   var n = 0
   for(var i = 0; i< neighbours[x][y].length; i++) {

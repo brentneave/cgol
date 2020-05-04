@@ -14,7 +14,7 @@ export default ({
     {
       cellsMap({
         cells,
-        f: ({ cell, x, y }) =>
+        f: (cells, cell, x, y) =>
           cell 
             ? <rect
                 x={x}

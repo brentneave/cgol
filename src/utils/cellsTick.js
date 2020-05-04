@@ -2,7 +2,7 @@ import cellsMap from './cellsMap'
 import cellShouldSpawn from './cellShouldSpawn'
 import cellShouldSurvive from './cellShouldSurvive'
 
-const cellTick = neighbours => ({ cells, cell, x, y }) => 
+const cellTick = neighbours => ( cells, cell, x, y ) => 
   cell
     ? cellShouldSurvive({ cells, neighbours, x, y})
     : cellShouldSpawn({ cells, neighbours, x, y})
