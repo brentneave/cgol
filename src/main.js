@@ -5,10 +5,12 @@ import init from '/init'
 import view from '/views/app'
 
 import animationFrame from '/subscriptions/animationFrame'
+import machine from '/subscriptions/machine'
 import mouseMove from '/subscriptions/mouseMove'
 
 import MouseMoved from '/actions/MouseMoved'
 import Tick from '/actions/Tick'
+import OnMachineUpdate from '/actions/OnMachineUpdate'
 
 
 import '/styles/base.css'
@@ -20,9 +22,9 @@ app({
   node: document.getElementById('app'),
   subscriptions:
     state => [
-      state.isRunning &&
-        [animationFrame, { action: Tick } ],
-      [mouseMove, { action: MouseMoved }]
+      state.isRunning && [animationFrame, { action: Tick } ],
+      [mouseMove, { action: MouseMoved }],
+      [machine, { onCellUpdate: OnMachineUpdate }]
     ]
 })
 
