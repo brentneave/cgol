@@ -12,9 +12,9 @@ export default ({
     height={cellSize * cells[0].length}
   >
     {
-      cellsMap({
+      cellsMap(
         cells,
-        f: (cells, cell, x, y) =>
+        (cells, cell, x, y) =>
           cell 
             ? <rect
                 x={x}
@@ -23,6 +23,6 @@ export default ({
                 height={1}
               />
             : null
-      })
+      )
     }
   </svg>

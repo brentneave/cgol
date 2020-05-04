@@ -1,7 +1,7 @@
-const cellsMap = ({
-  cells = [[]],
-  f = x => x,
-} = {}) => 
+const cellsMap = (
+  cells,
+  f,
+) =>
   cells.map(
     (column, x) =>
       column.map(

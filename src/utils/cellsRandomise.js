@@ -4,9 +4,9 @@ const cellsRandomise = ({
   cells = [[]],
   chance = 1/10,
 } = {}) => 
-  cellsMap({
+  cellsMap(
     cells,
-    f: () => Math.random() < chance
-  })
+    () => Math.random() < chance
+  )
 
 export default cellsRandomise

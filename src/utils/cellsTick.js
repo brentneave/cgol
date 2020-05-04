@@ -7,10 +7,10 @@ const cellTick = neighbours => (cells, cell, x, y) =>
     ? cellShouldSurvive(cells, neighbours, x, y)
     : cellShouldSpawn(cells, neighbours, x, y)
 
-const cellsTick = (cells, neighbours) => {
-  return cellsMap({
+const cellsTick = (cells, neighbours) =>
+  cellsMap(
     cells,
-    f: cellTick(neighbours)
-  })
-}
+    cellTick(neighbours)
+  )
+
 export default cellsTick
