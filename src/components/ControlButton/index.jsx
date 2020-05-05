@@ -1,3 +1,5 @@
+
+// @ts-ignore
 import style from './style.css'
 
 const ControlButton = ({ 

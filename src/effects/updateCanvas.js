@@ -11,7 +11,7 @@ const updateCanvas = (
   const canvas = document.getElementById(canvasId)
   const context = canvas.getContext('2d')
 
-  context.fillStyle = 'rgba(255,255,255,1)'
+  context.fillStyle = 'white'
   context.fillRect(
     0,
     0,

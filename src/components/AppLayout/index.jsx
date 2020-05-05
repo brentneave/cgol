@@ -5,13 +5,17 @@ const AppLayout=({
   canvas,
   bottomLeft,
   bottomRight,
-  cursor
+  stampPanel,
+  cursor,
 }) =>
   <div class={styles.appLayout}>
     <div class={styles.appLayout__canvas}>
       {canvas}
     </div>
     <div class={styles.appLayout__bottom}>
+      <div class={styles.appLayout__stampPanel}>
+        {stampPanel}
+      </div>
       <div class={styles.appLayout__bottomLeft}>
         {bottomLeft}
       </div>

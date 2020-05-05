@@ -5,7 +5,8 @@ const DragPattern = (
   } = {}
 ) => ({
   ...state,
-  draggingPattern: pattern
+  draggingPattern: pattern,
+  isStampPanelOpen: false,
 })
 
 export default DragPattern

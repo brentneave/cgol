@@ -1,7 +1,6 @@
 .controlBar {
   align-items: center;
   display: flex;
-  padding: 1.5rem;
 }
 
 .controlBarButton:not(:last-child) {

@@ -65,8 +65,10 @@ const iconRandom = <VectorCells
 
 const ControlBar = ({
   isRunning,
+  isStampPanelOpen,
   Reset,
   Randomise,
+  StampPanelOpen,
   Start,
   Stop,
   Tick

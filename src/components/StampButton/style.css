@@ -1,10 +1,35 @@
 .stampButton,
 .stampButtonSelected {
-  padding: 0.5rem;
-  width: 4rem;
+  appearance: none;
+  background-color: transparent;
+  border-radius: 4px;
+  border: none;
+  color: rgba(255,60,0,0.75);
+  display: block;
+  padding: .25rem;
+  transition: all .25s ease-in-out;
+  width: 100%;
 }
 
 .stampButtonSelected {
-  background-color: #fff;
-  color: #111;
+  background-color: rgba(255,60,0,0.75);;
+  color: white;
 }
+
+.stampButton:active,
+.stampButtonSelected:active {
+  transform: scale(0.95);
+} 
+
+.stampButton:disabled,
+.stampButtonSelected:disabled {
+  color: #333;
+  opacity: 0;
+} 
+
+
+.stampButton:focus,
+.stampButtonSelected:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(0, 132, 255, 0.7);
+} 

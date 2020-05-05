@@ -1,8 +1,9 @@
-import DragPattern from '../actions/DragPattern'
-import DragPatternCancel from '../actions/DragPatternCancel'
-import DropPattern from '../actions/DropPattern'
+import DragPattern from '/actions/DragPattern'
+import DragPatternCancel from '/actions/DragPatternCancel'
+import DropPattern from '/actions/DropPattern'
 import Randomise from '/actions/Randomise'
 import Reset from '/actions/Reset'
+import StampPanelOpen from '../actions/StampPanelOpen'
 import Start from '/actions/Start'
 import Stop from '/actions/Stop'
 import Tick from '/actions/Tick'
@@ -10,11 +11,27 @@ import Tick from '/actions/Tick'
 import AppLayout from '/components/AppLayout'
 import CellsCursor from '/components/CellsCursor'
 import ControlBar from '/components/ControlBar'
+import ControlButton from '/components/ControlButton'
 import RasterCells from '/components/RasterCells'
-import StampBar from '/components/StampBar'
+import StampPanel from '/components/StampPanel'
+import VectorCells from '/components/VectorCells'
 
 // @ts-ignore
 import utils from '/styles/utils.css'
+
+
+
+const iconAdd = <VectorCells
+  cellSize={2}
+  cells={[
+    [0,0,1,1,0,0],
+    [0,0,1,1,0,0],
+    [1,1,1,1,1,1],
+    [1,1,1,1,1,1],
+    [0,0,1,1,0,0],
+    [0,0,1,1,0,0],
+  ]}
+/>
 
 
 // Root application view
@@ -24,8 +41,8 @@ export default ({
   cellSize,
   draggingPattern,
   isRunning,
+  isStampPanelOpen,
   mouse,
-  neighbours,
 }) =>
   <AppLayout
     canvas={
@@ -37,16 +54,22 @@ export default ({
         DropPattern={DropPattern}
       />
     }
-    bottomLeft={
-      <StampBar 
+    stampPanel={
+      <StampPanel 
+        isStampPanelOpen={isStampPanelOpen}
         draggingPattern={draggingPattern}
         DragPattern={DragPattern}
         DragPatternCancel={DragPatternCancel}
       />
     }
+    bottomLeft={
+      <ControlButton key="ctrl-add" onclick={[StampPanelOpen, { isOpen: !isStampPanelOpen }]} label={iconAdd} />
+    }
     bottomRight={
       <ControlBar
         isRunning={isRunning}
+        isStampPanelOpen={isStampPanelOpen}
+        StampPanelOpen={StampPanelOpen}
         Reset={Reset}
         Randomise={Randomise}
         Start={Start}

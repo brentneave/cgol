@@ -1,13 +1,12 @@
+// @ts-ignore
+import style from './style.css'
+
 import StampButton from '/components/StampButton'
 
 import gosperGliderGun from '/stamps/gosperGliderGun'
 import pulsar from '/stamps/pulsar'
 import rPentomino from '/stamps/rPentomino'
 import TwoEngineCorderShip from '/stamps/TwoEngineCorderShip'
-
-
-// @ts-ignore
-import style from './style.css'
 
 import { 
   cellsRotate90,
@@ -16,17 +15,16 @@ import {
 } from '/utils/cellsRotate'
 
 const gosperGliderGun90 = cellsRotate90(gosperGliderGun)
-
 const gosperGliderGun180 = cellsRotate180(gosperGliderGun)
-
 const gosperGliderGun270 = cellsRotate270(gosperGliderGun)
 
-const StampBar = ({
-  draggingPattern = [[]],
-  DragPattern = () => {},
-  DragPatternCancel = () => {},
-} = {}) =>
-  <div class={style.stampBar}>
+const StampPanel = ({
+  DragPattern = undefined,
+  DragPatternCancel = undefined,
+  draggingPattern = undefined,
+  isStampPanelOpen = false,
+}={}) =>
+  <div class={isStampPanelOpen ? style.stampPanelOpen : style.stampPanel}>
     {
       [
         gosperGliderGun,
@@ -38,7 +36,7 @@ const StampBar = ({
         TwoEngineCorderShip
       ].map(
         stamp => 
-          <div class={style.stampBarButton}>
+          <div class={style.stampPanelButton}>
             <StampButton
               isSelected={draggingPattern === stamp}
               stamp={stamp}
@@ -50,4 +48,4 @@ const StampBar = ({
     }
   </div>
 
-export default StampBar
+export default StampPanel

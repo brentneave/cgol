@@ -28,7 +28,7 @@ const StampButton = ({
   }
   >
     <VectorCells
-      cellSize={1}
+      cellSize={2}
       cells={stamp}
     />
   </button>

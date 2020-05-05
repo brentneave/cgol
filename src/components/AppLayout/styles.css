@@ -1,5 +1,5 @@
 .appLayout {
-  background-color: rgb(0,88,125);
+  background-color: white;
   bottom: 0;
   left: 0;
   position: fixed;
@@ -15,20 +15,28 @@
   top: 0;
 }
 
-.appLayout__bottom {
+.appLayout__stampPanel {
   bottom: 0;
-  display: flex;
-  justify-content: space-between;
   left: 0;
   position: absolute;
-  right: 0;
-  z-index: 1;
 }
 
-.appLayout__bottomLeft, 
+.appLayout__bottomLeft {
+  bottom: 0;
+  left: 0;
+  padding: 0 0 1.5rem 1.5rem;
+  position: absolute;
+}
+
+.appLayout__bottomLeftOpen {
+  pointer-events: auto;
+}
+
 .appLayout__bottomRight {
-  align-items: stretch;
-  display: flex;
+  bottom: 0;
+  right: 0;
+  padding: 0 1.5rem 1.5rem 0;
+  position: absolute;
 }
 
 .cursor {
