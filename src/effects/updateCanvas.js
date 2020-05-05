@@ -14,7 +14,7 @@ const updateCanvas = (
   const context = canvas.getContext('2d')
 
   
-  context.fillStyle = 'rgba(255, 60, 0, 1)'
+  context.fillStyle = 'rgba(255, 60, 0, 0.2)'
   context.fillRect(
     0,
     0,
