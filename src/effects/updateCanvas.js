@@ -11,7 +11,7 @@ const updateCanvas = (
   const canvas = document.getElementById(canvasId)
   const context = canvas.getContext('2d')
 
-  context.fillStyle = 'white'
+  context.fillStyle = 'rgba(0,0,100,0.1)'
   context.fillRect(
     0,
     0,
@@ -19,7 +19,7 @@ const updateCanvas = (
     cellSize * cells[0].length
   )
 
-  context.fillStyle = 'black'
+  context.fillStyle = 'red'
 
   cells.forEach(
     (column, x ) => {
