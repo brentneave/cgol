@@ -6,7 +6,7 @@ const init = cacheNeighbours({
   cells: cellsCreate(),
   cellSize: 3,
   draggingPattern: undefined,
-  isRunning: false,
+  isRunning: true,
   mouse: { x: 0, y: 0 },
 })
 

@@ -27,21 +27,22 @@ const StampPanel = ({
   <div class={isStampPanelOpen ? style.stampPanelOpen : style.stampPanel}>
     {
       [
-        gosperGliderGun,
-        gosperGliderGun90,
-        gosperGliderGun180,
-        gosperGliderGun270,
-        pulsar,
-        rPentomino,
-        TwoEngineCorderShip
+        {stamp: gosperGliderGun90, title: 'Shoots gliders up and to the left'},
+        {stamp: gosperGliderGun, title: 'Shoots gliders up and to the right'},
+        {stamp: gosperGliderGun180, title: 'Shoots gliders down and to the left'},
+        {stamp: gosperGliderGun270, title: 'Shoots gliders down and to the right'},
+        {stamp: pulsar, title: 'Pulsates, explodes when touched'},
+        {stamp: rPentomino, title: 'Explodes'},
+        {stamp: TwoEngineCorderShip, title: 'Shambles'}
       ].map(
-        stamp => 
+        ({ stamp, title }) => 
           <div class={style.stampPanelButton}>
             <StampButton
               isSelected={draggingPattern === stamp}
               stamp={stamp}
               DragPattern={DragPattern}
               DragPatternCancel={DragPatternCancel}
+              title={title}
             />
           </div>
       )

@@ -10,8 +10,8 @@ const windowResize = (dispatch, { action, canvasId }) => {
     const canvas = document.getElementById(canvasId)
 
     if(canvas) {
-      const width = Number(canvas.offsetWidth)
-      const height = Number(canvas.offsetHeight)
+      const width = Number(window.innerWidth)
+      const height = Number(window.innerHeight)
 
       if(width !== lastWidth || height !== lastHeight) {
         dispatch(

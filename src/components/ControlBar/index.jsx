@@ -75,10 +75,10 @@ const ControlBar = ({
 }) =>
   <div class={style.controlBar}>
     {[
-      <ControlButton key="ctrl-tick" onclick={[Tick]} label={iconTick} isDisabled={isRunning} />,
-      <ControlButton key="ctrl-start" onclick={[isRunning ? Stop : Start]} label={isRunning ? iconStop : iconStart} />,
-      <ControlButton key="ctrl-reset" onclick={[ Reset, {} ]} label={iconReset} />,
-      <ControlButton key="ctrl-random" onclick={[ Randomise, {} ]} label={iconRandom} />,
+      <ControlButton key="ctrl-tick" onclick={[Tick]} label={'Tick'} isDisabled={isRunning} />,
+      <ControlButton key="ctrl-start" onclick={[isRunning ? Stop : Start]} label={isRunning ? 'Stop' : 'Start'} />,
+      <ControlButton key="ctrl-reset" onclick={[ Reset ]} label={'Purge'} />,
+      <ControlButton key="ctrl-random" onclick={[ Randomise, {} ]} label={'Rand'} />,
     ].map(
       button => 
         <div class={style.controlBarButton}>

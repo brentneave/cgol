@@ -63,7 +63,11 @@ export default ({
       />
     }
     bottomLeft={
-      <ControlButton key="ctrl-add" onclick={[StampPanelOpen, { isOpen: !isStampPanelOpen }]} label={iconAdd} />
+      <ControlButton 
+        key="ctrl-add"
+        onclick={[StampPanelOpen, { isOpen: !isStampPanelOpen }]}
+        label={isStampPanelOpen ? 'Close' : 'Stamp'}
+      />
     }
     bottomRight={
       <ControlBar
