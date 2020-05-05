@@ -95,32 +95,6 @@ a, .link {
 
 
 
-/* === Buttons === */
-button, .button {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  border: 1px solid currentColor;
-  border-radius: 0.25rem;
-  padding: 0.25rem 0.75rem;
-  text-decoration: none;
-  color: var(--background-color);
-  background-color: var(--text-color);
-  &:hover {
-    opacity: 0.9;
-  }
-  &:active {
-    opacity: 0.8;
-  }
-  &.outlined {
-    color: var(--text-color);
-    background-color: var(--background-color);
-  }
-}
-
-
-
 /* === Forms === */
 input:not([type="radio"]):not([type="checkbox"]):not([type="color"]),
 select,
