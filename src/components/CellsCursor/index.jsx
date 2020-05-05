@@ -7,6 +7,7 @@ const CellsCursor = ({
 }) =>
   <div 
     style={{
+      color: 'white',
       width: `100px`,
       height: `100px`,
       position: 'fixed',

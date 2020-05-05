@@ -12,6 +12,7 @@ const Reset = (
     cacheNeighbours({
       ...state,
       cells: cellsCreate({
+        chance: 0,
         width: state.cells.length, 
         height: state.cells[0].length,
       })

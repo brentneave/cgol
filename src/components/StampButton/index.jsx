@@ -7,9 +7,11 @@ const StampButton = ({
   isSelected = false, 
   stamp = [[]],
   DragPattern = () => {},
-  DragPatternCancel = () => {}
+  DragPatternCancel = () => {},
+  title = ""
 } = {}) =>
   <button
+  title={title}
     class={
       isSelected
         ? style.stampButtonSelected
