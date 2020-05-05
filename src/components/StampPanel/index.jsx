@@ -6,6 +6,7 @@ import StampButton from '/components/StampButton'
 import gosperGliderGun from '/stamps/gosperGliderGun'
 import pulsar from '/stamps/pulsar'
 import rPentomino from '/stamps/rPentomino'
+import sidewinder from '/stamps/sidewinder'
 import TwoEngineCorderShip from '/stamps/TwoEngineCorderShip'
 
 import { 
@@ -33,7 +34,8 @@ const StampPanel = ({
         {stamp: gosperGliderGun270, title: 'Shoots gliders down and to the right'},
         {stamp: pulsar, title: 'Pulsates, explodes when touched'},
         {stamp: rPentomino, title: 'Explodes'},
-        {stamp: TwoEngineCorderShip, title: 'Shambles'}
+        {stamp: TwoEngineCorderShip, title: 'Shambles'},
+        {stamp: sidewinder, title: 'Shambles, leaves a trail'},
       ].map(
         ({ stamp, title }) => 
           <div class={style.stampPanelButton}>
