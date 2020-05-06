@@ -24,3 +24,8 @@ node_modules/
 # Parcel
 .cache/
 dist
+
+# Tags
+tags
+tags.lock
+tags.temp
