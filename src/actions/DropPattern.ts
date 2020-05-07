@@ -20,11 +20,11 @@ type f = (
 
 const DropPattern:f = (
   state,
-  { 
+  {
     xOffset = 0,
     yOffset = 0,
   }
-) => 
+) =>
   effectAdd(
     updateCanvas,
     {

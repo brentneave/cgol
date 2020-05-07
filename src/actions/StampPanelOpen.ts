@@ -6,7 +6,7 @@ type f = (
 ) => State
 
 const StampPanelOpen:f = (
-  state, 
+  state,
   { isOpen = false }
 ) => ({
   ...state,

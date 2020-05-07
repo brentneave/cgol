@@ -13,9 +13,9 @@ type f = (
 ]
 
 const Randomise:f = (
-  state, 
+  state,
   { chance }
-) => 
+) =>
   effectAdd(
     updateCanvas,
     {

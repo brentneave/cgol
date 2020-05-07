@@ -14,7 +14,7 @@ const addNeighbours:fAddNeighbours = cells => ({
   cells,
   neighbours: cellsMap(
     cells,
-    (cells, cell, x, y) => 
+    (cells, cell, x, y) =>
       getCellNeighbours(cells, x, y)
   ),
 })
@@ -34,14 +34,14 @@ type fCellsCreate = ({
 
 const cellsCreate:fCellsCreate = ({
   chance = 0.2,
-  width = 480, 
+  width = 480,
   height = 270,
-}) => 
+}) =>
   addNeighbours(
     [...Array(width)]
       .fill([])
       .map(
-        () => 
+        () =>
           [...Array(height)]
             .fill(false)
             .map(

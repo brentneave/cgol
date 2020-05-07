@@ -9,7 +9,7 @@ type f = (state:State) => [
   [[Effect, State]]
 ]
 
-const Tick:f = state => 
+const Tick:f = state =>
   effectAdd(
     updateCanvas,
     {
@@ -17,7 +17,7 @@ const Tick:f = state =>
       machine: {
         ...state.machine,
         cells: cellsTick(
-          state.machine.cells, 
+          state.machine.cells,
           state.machine.neighbours
         )
       }

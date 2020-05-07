@@ -21,7 +21,7 @@ type f = (
 const SetSize:f = (state, {
   width = 480,
   height = 320,
-}) => 
+}) =>
   effectAdd(
     updateCanvas,
     {
@@ -31,8 +31,8 @@ const SetSize:f = (state, {
         ...state.machine,
         cells: cellsMerge(
           cellsCreate({
-            chance: 0, 
-            width: Math.ceil(width / state.machine.cellSize), 
+            chance: 0,
+            width: Math.ceil(width / state.machine.cellSize),
             height: Math.ceil(height / state.machine.cellSize),
           }).cells,
           state.machine.cells,
@@ -44,8 +44,8 @@ const SetSize:f = (state, {
           ),
         ),
         neighbours: cellsCreate({
-          chance: 0, 
-          width: Math.ceil(width / state.machine.cellSize), 
+          chance: 0,
+          width: Math.ceil(width / state.machine.cellSize),
           height: Math.ceil(height / state.machine.cellSize),
         }).neighbours
       }

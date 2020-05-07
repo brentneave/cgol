@@ -18,8 +18,8 @@ import '/styles/base.css'
 
 // Initialize the app on the #app div
 app({
-  init, 
-  view, 
+  init,
+  view,
   node: document.getElementById('app'),
   subscriptions:
     state => [

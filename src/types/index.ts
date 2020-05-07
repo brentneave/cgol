@@ -1,4 +1,3 @@
-
 export type Effect = (...args:any[]) => any
 
 export type Coord = { x: number, y: number }

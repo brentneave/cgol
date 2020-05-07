@@ -1,6 +1,6 @@
 import { Grid } from '/types'
 
-import cellsMap from './cellsMap.ts'
+import cellsMap from './cellsMap'
 
 type f = (
   cells:Grid,
@@ -10,7 +10,7 @@ type f = (
 const cellsRandomise:f = (
   cells = [[]],
   chance = 1/10,
-) => 
+) =>
   cellsMap(
     cells,
     () => Math.random() < chance

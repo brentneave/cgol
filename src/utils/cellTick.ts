@@ -13,7 +13,7 @@ type f = (
   y: number
 ) => boolean
 
-const cellTick:f = neighbours => (cells, cell, x, y) => 
+const cellTick:f = neighbours => (cells, cell, x, y) =>
   cell
     ? cellShouldSurvive(cells, neighbours, x, y)
     : cellShouldSpawn(cells, neighbours, x, y)

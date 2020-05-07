@@ -11,7 +11,7 @@ type f = (state:State) => [
 
 const Reset:f = (
   state
-) => 
+) =>
   effectAdd(
     updateCanvas,
     {
@@ -20,7 +20,7 @@ const Reset:f = (
         ...state.machine,
         ...cellsCreate({
           chance: 0,
-          width: state.machine.cells.length, 
+          width: state.machine.cells.length,
           height: state.machine.cells[0].length,
         })
       }

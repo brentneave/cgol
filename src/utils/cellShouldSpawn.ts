@@ -2,7 +2,7 @@ import { Grid, Neighbours } from '/types'
 
 import getNumberOfLiveNeighbours from './getNumberOfLiveNeighbours'
 
-const shouldSpawn = (n:number):boolean => 
+const shouldSpawn = (n:number):boolean =>
   n === 3
 
 type f = (
@@ -13,7 +13,7 @@ type f = (
 ) => boolean
 
 const cellShouldSpawn:f = (cells, neighbours, x, y) =>
-  cells[x][y] 
+  cells[x][y]
     ? true
     : shouldSpawn(
         getNumberOfLiveNeighbours(cells, neighbours, x, y)
