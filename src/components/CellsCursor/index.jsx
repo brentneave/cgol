@@ -1,4 +1,4 @@
-import VectorCells from '/components/VectorCells'
+import VectorCells from '/components/VectorCells.tsx'
 
 const CellsCursor = ({
   cellSize,

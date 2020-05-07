@@ -1,7 +1,7 @@
 import ControlButton from '../ControlButton'
-import VectorCells from '/components/VectorCells'
+import VectorCells from '/components/VectorCells.tsx'
 
-import { cellsRotate90 } from '/utils/cellsRotate'
+import { cellsRotate90 } from '/utils/cellsRotate.ts'
 
 // @ts-ignore
 import style from './style.css'

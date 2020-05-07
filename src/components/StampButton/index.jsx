@@ -1,5 +1,5 @@
 // @ts-nocheck
-import VectorCells from '/components/VectorCells'
+import VectorCells from '/components/VectorCells.tsx'
 
 import style from './style.css'
 
