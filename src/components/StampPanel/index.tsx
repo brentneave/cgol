@@ -19,7 +19,6 @@ const StampPanel:f = ({
       stamps.available.map(
         stamp => 
           <div class={style.stampPanelButton}>
-            {console.log('stamp', stamp)}
             <StampButton
               isSelected={stamps.selected === stamp}
               stamp={stamp}

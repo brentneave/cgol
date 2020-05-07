@@ -8,7 +8,9 @@ type f = (
 const DragPattern:f = (
   state,
   { pattern }
-) => ({
+) => {
+  console.log('DragPattern', pattern)
+  return ({
   ...state,
   stamps: {
     ...state.stamps,
@@ -17,5 +19,5 @@ const DragPattern:f = (
     isPanelOpen: false,
   },
 })
-
+}
 export default DragPattern

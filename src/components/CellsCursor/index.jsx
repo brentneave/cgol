@@ -4,8 +4,9 @@ const CellsCursor = ({
   cellSize,
   draggingPattern,
   mouse
-}) =>
-  <div 
+}) => {
+  console.log(mouse)
+  return <div 
     style={{
       color: 'white',
       width: `100px`,
@@ -15,9 +16,9 @@ const CellsCursor = ({
       pointerEvents: 'none',
       top: 0,
       transform: `translate(${
-        Math.round(mouse.x / cellSize) * cellSize
+        Math.round(mouse.position.x / cellSize) * cellSize
       }px, ${
-        Math.round(mouse.y / cellSize) * cellSize
+        Math.round(mouse.position.y / cellSize) * cellSize
       }px)`,
     }}
   >
@@ -26,5 +27,5 @@ const CellsCursor = ({
       cellSize={cellSize}
     />
   </div>
-
+}
 export default CellsCursor
