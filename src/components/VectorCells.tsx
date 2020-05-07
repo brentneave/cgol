@@ -3,20 +3,17 @@ import { Grid } from '/types'
 
 type f = (
   {
-    cells,
-    cellSize
-  }:{
     cells:Grid,
     cellSize:number
   }
 ) => any
 
 const VectorCells:f = ({
-  cells = [[]], 
+  cells = [[]],
   cellSize = 1,
 }) =>
-  <svg 
-    fill="currentColor" 
+  <svg
+    fill="currentColor"
     viewBox={`0 0 ${cells.length} ${cells[0].length}`}
     width={cellSize * cells.length}
     height={cellSize * cells[0].length}
@@ -25,7 +22,7 @@ const VectorCells:f = ({
       cellsMap(
         cells,
         (cells, cell, x, y) =>
-          cell 
+          cell
             ? <rect
                 x={x}
                 y={y}

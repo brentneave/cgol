@@ -16,7 +16,7 @@ const RasterCells:f = ({
   render,
   stamps,
 }) =>
-  <canvas 
+  <canvas
     class={styles.rasterCells}
     id={render.canvasId}
     width={machine.cells.length * machine.cellSize}

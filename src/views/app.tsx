@@ -38,14 +38,14 @@ const App:f = ({
       />
     }
     stampPanel={
-      <StampPanel 
+      <StampPanel
         stamps={stamps}
         DragPattern={DragPattern}
         DragPatternCancel={DragPatternCancel}
       />
     }
     bottomLeft={
-      <ControlButton 
+      <ControlButton
         key="ctrl-add"
         onclick={[StampPanelOpen, { isOpen: !stamps.isPanelOpen }]}
         label={stamps.isPanelOpen ? 'Close' : 'Stamp'}
