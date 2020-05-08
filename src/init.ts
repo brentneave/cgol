@@ -28,7 +28,6 @@ const init:State = {
       gosperGliderGun180,
       gosperGliderGun270,
     ],
-    selected: undefined,
     isDragging: true,
     isPanelOpen: false,
   },

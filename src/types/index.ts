@@ -2,9 +2,11 @@ export type Effect = (...args:any[]) => any
 
 export type Coord = { x: number, y: number }
 
-export type Cell = number | boolean
+export type Cell = boolean
 
 export type Grid = Cell[][]
+
+export type Stamp = number[][]
 
 export type Machine = {
   cells: Grid,
@@ -26,8 +28,8 @@ export type Render =  {
 }
 
 export type Stamps =  {
-  available: Grid[],
-  selected: Grid | undefined,
+  available: Stamp[],
+  selected?: Grid,
   isDragging: boolean,
   isPanelOpen: boolean,
 }

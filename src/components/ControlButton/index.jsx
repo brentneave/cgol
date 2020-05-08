@@ -2,9 +2,10 @@
 // @ts-ignore
 import style from './style.css'
 
-const ControlButton = ({ 
+const ControlButton = ({
   isDisabled = false,
-  label = undefined, 
+  key = '',
+  label = undefined,
   onclick = undefined
 } = {}) =>
   <button

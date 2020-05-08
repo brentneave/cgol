@@ -1,8 +1,8 @@
 {
   "compilerOptions": {
-    "checkJs": true,
     "jsx": "preserve",
     "baseUrl": ".",
+    "lib": ["es2018", "dom"],
     "paths": {
       "/*": ["src/*"],
     },
@@ -20,5 +20,5 @@
     "index.d.ts",
     "src/**/*"
   ],
-  "exclude": ["node_modules", "public", ".cache"]
+  "exclude": ["node_modules", "dist", ".cache"]
 }
