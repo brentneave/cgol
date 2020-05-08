@@ -1,8 +1,13 @@
+export type Action = [
+  State,
+  [[Effect, State]]
+]
+
 export type Effect = (...args:any[]) => any
 
 export type Coord = { x: number, y: number }
 
-export type Cell = boolean
+export type Cell = { alive: boolean, neighbours: number, nextNeighbours: number }
 
 export type Grid = Cell[][]
 
@@ -12,14 +17,11 @@ export type Machine = {
   cells: Grid,
   cellSize: number,
   isRunning: boolean,
-  neighbours: Neighbours,
 }
 
 export type Mouse = {
   position: Coord
 }
-
-export type Neighbours = Coord[][][]
 
 export type Render =  {
   canvasId: string,
@@ -29,7 +31,7 @@ export type Render =  {
 
 export type Stamps =  {
   available: Stamp[],
-  selected?: Grid,
+  selected?: Stamp,
   isDragging: boolean,
   isPanelOpen: boolean,
 }

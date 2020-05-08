@@ -1,30 +1,16 @@
-import { Effect, State } from '/types'
+import { Action, State } from '/types'
 
 import updateCanvas from '/effects/updateCanvas'
 import effectAdd from '/utils/effectAdd'
 import cellsMerge from '../utils/cellsMerge'
 
-type f = (
-  state:State,
-  {
-    xOffset,
-    yOffset,
-  }:{
-    xOffset:number,
-    yOffset:number,
-  }
-) => [
-  State,
-  [[Effect, State]]
-]
-
-const DropPattern:f = (
-  state,
+const DropPattern = (
+  state: State,
   {
     xOffset = 0,
     yOffset = 0,
   }
-) =>
+): Action =>
   effectAdd(
     updateCanvas,
     {

@@ -1,17 +1,12 @@
-import { Effect, State } from '/types'
+import { Action, State } from '/types'
 
 import cellsCreate from '/utils/cellsCreate'
 import effectAdd from '../utils/effectAdd'
 import updateCanvas from '/effects/updateCanvas'
 
-type f = (state:State) => [
-  State,
-  [[Effect, State]]
-]
-
-const Reset:f = (
-  state
-) =>
+const Reset = (
+  state: State
+): Action =>
   effectAdd(
     updateCanvas,
     {

@@ -1,22 +1,19 @@
-import { Grid } from '/types'
+import { Cell, Grid, Stamp } from '/types'
 
+import cellSet from './cellSet'
 import cellsMap from './cellsMap'
 
+const toBoolean = (cell: Cell|number) =>
+  (typeof cell === "number")
+    ? cell > 0
+    : cell.alive
 
-type f = (
-  cells:Grid,
-  pattern:Grid,
-  xOffset:number,
-  yOffset:number,
-) => Grid
-
-
-const cellsMerge:f = (
-  cells = [[]],
-  pattern = [[]],
-  xOffset = 0,
-  yOffset = 0,
-) =>
+const cellsMerge = (
+  cells: Grid,
+  pattern: Grid|Stamp,
+  xOffset: number,
+  yOffset: number
+): Grid =>
   cellsMap(
     cells,
     (cells, cell, x, y) =>
@@ -24,7 +21,12 @@ const cellsMerge:f = (
       y >= yOffset &&
       x < xOffset + pattern.length &&
       y < yOffset + pattern[0].length
-        ? pattern[x - xOffset][y - yOffset]
+        ? cellSet(
+            cells,
+            x,
+            y,
+            toBoolean(pattern[x - xOffset][y - yOffset])
+          )
         : cell
   )
 

@@ -1,14 +1,9 @@
 import { State } from '/types'
 
-type f = (
-  state:State,
-  { isOpen }:{ isOpen:boolean }
-) => State
-
-const StampPanelOpen:f = (
-  state,
+const StampPanelOpen = (
+  state: State,
   { isOpen = false }
-) => ({
+): State => ({
   ...state,
   stamps: {
     ...state.stamps,

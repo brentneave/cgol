@@ -1,21 +1,9 @@
 import { State } from '/types'
-import { isTaggedTemplateExpression } from 'typescript'
 
-type f = (
-  state:State,
-  {
-    clientX,
-    clientY
-  }:{
-    clientX:number,
-    clientY:number,
-  }
-) => State
-
-const MouseMoved:f = (
-  state,
-  { clientX, clientY }
-) => ({
+const MouseMoved = (
+  state: State,
+  { clientX = 0, clientY = 0 }
+): State => ({
   ...state,
   mouse: {
     ...state.mouse,

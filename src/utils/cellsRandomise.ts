@@ -1,19 +1,16 @@
 import { Grid } from '/types'
 
+import cellSet from './cellSet'
 import cellsMap from './cellsMap'
 
-type f = (
-  cells:Grid,
-  chance:number
-) => Grid
-
-const cellsRandomise:f = (
-  cells = [[]],
-  chance = 1/10,
-) =>
+const cellsRandomise = (
+  cells: Grid,
+  chance: number,
+): Grid =>
   cellsMap(
     cells,
-    () => Math.random() < chance
+    (cells, _, x, y) =>
+      cellSet(cells, x, y, Math.random() < chance)
   )
 
 export default cellsRandomise

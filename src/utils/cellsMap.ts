@@ -1,25 +1,11 @@
 import { Grid, Cell } from '/types'
 
-type f = (
-  cells:Grid,
-  f: (
-    cells:Grid,
-    cell:Cell,
-    x:number,
-    y:number
-  ) => any
-) => any[][]
+import cellsMapT from './cellsMapT'
 
-const cellsMap:f = (
-  cells,
-  f,
-) =>
-  cells.map(
-    (column, x) =>
-      column.map(
-        (cell, y) =>
-          f(cells, cell, x, y)
-      )
-  )
+const cellsMap = (
+  cells: Grid,
+  f: (cells: Grid, cell: Cell, x: number, y: number) => Cell,
+): Grid =>
+  cellsMapT<Cell>(cells, f)
 
 export default cellsMap

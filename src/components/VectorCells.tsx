@@ -1,12 +1,15 @@
-import cellsMap from '/utils/cellsMap.ts'
+import { VNode } from 'hyperapp'
+
 import { Grid } from '/types'
+
+import cellsMapT from '/utils/cellsMapT'
 
 type f = (
   {
-    cells:Grid,
-    cellSize:number
+    cells: Grid,
+    cellSize: number
   }
-) => any
+) => VNode
 
 const VectorCells:f = ({
   cells = [[]],
@@ -19,10 +22,10 @@ const VectorCells:f = ({
     height={cellSize * cells[0].length}
   >
     {
-      cellsMap(
+      cellsMapT<VNode>(
         cells,
         (cells, cell, x, y) =>
-          cell
+          cell.alive
             ? <rect
                 x={x}
                 y={y}

@@ -1,53 +1,27 @@
-import { Grid, Neighbours } from '/types'
+import { Cell, Grid } from '/types'
 
-import cellsMap from '/utils/cellsMap.ts'
-import getCellNeighbours from '/utils/getCellNeighbours'
+import cellsRandomise from '/utils/cellsRandomise.ts'
 
-type fAddNeighbours = (
-  cells:Grid
-) => ({
-  cells:Grid,
-  neighbours:Neighbours
-})
+const cellEmpty = (): Cell => (
+  { alive: false, neighbours: 0, nextNeighbours: 0 }
+)
 
-const addNeighbours:fAddNeighbours = cells => ({
-  cells,
-  neighbours: cellsMap(
-    cells,
-    (cells, cell, x, y) =>
-      getCellNeighbours(cells, x, y)
-  ),
-})
-
-type fCellsCreate = ({
-  chance,
-  width,
-  height,
-}: {
-  chance?:number,
-  width?:number,
-  height?:number,
-}) => ({
-  cells:Grid,
-  neighbours:Neighbours
-})
-
-const cellsCreate:fCellsCreate = ({
+const cellsCreate = ({
   chance = 0.2,
   width = 480,
   height = 270,
-}) =>
-  addNeighbours(
+}): Grid => {
+  const cells: Grid =
     [...Array(width)]
       .fill([])
       .map(
         () =>
           [...Array(height)]
-            .fill(false)
-            .map(
-              () => Math.random() < chance
-            )
+            .fill(cellEmpty())
       )
-  )
+  return chance > 0
+    ? cellsRandomise(cells, chance)
+    : cells
+}
 
 export default cellsCreate

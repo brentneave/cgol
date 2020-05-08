@@ -1,17 +1,9 @@
-import { Effect, State } from '/types'
+import { Action, Effect, State } from '/types'
 
-type f = (
+const effectAdd = (
   effect: Effect,
-  state: State,
-) => [
-  State,
-  [[Effect, State]]
-]
-
-const effectAdd:f = (
-  effect,
-  state
-) => [
+  state: State
+): Action => [
   state,
   [[effect, state]]
 ]

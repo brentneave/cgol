@@ -1,8 +1,6 @@
 import { State } from '/types'
 
-type f = (state:State) => State
-
-const Start:f = state => ({
+const Start = (state: State): State => ({
     ...state,
     machine: {
       ...state.machine,

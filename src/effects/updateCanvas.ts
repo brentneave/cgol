@@ -1,18 +1,12 @@
-import { State } from '/types'
+import { Effect, State } from '/types'
 
-type f = (
-  dispatch,
-  state:State
-) => void
-
-const updateCanvas:f = (
-  dispatch,
+const updateCanvas = (
+  dispatch: Effect,
   {
     machine,
     render
-  }
+  }: State
 ) => {
-
   const canvas = <HTMLCanvasElement> document.getElementById(render.canvasId)
   if(!canvas) return
 
@@ -46,6 +40,5 @@ const updateCanvas:f = (
     }
   )
 }
-
 
 export default updateCanvas
