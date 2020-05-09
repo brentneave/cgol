@@ -1,4 +1,5 @@
-import { app } from 'hyperapp'
+import { app, AppProps } from 'hyperapp'
+import { State } from '/types'
 
 // App init imports
 import init from '/init'
@@ -17,7 +18,7 @@ import Tick from '/actions/Tick'
 import '/styles/base.css'
 
 // Initialize the app on the #app div
-app({
+app(<AppProps<State>>{
   init,
   view,
   node: document.getElementById('app'),

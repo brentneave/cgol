@@ -3,6 +3,7 @@
     "jsx": "preserve",
     "baseUrl": ".",
     "lib": ["es2018", "dom"],
+    "outDir": "dist/out-tsc",
     "paths": {
       "/*": ["src/*"],
     },
@@ -17,7 +18,6 @@
     ]
   },
   "include": [
-    "index.d.ts",
     "src/**/*"
   ],
   "exclude": ["node_modules", "dist", ".cache"]
