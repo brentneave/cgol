@@ -37,11 +37,7 @@ const App:f = ({
       />
     }
     stampPanel={
-      <StampPanel
-        stamps={stamps}
-        DragPattern={DragPattern}
-        DragPatternCancel={DragPatternCancel}
-      />
+      <StampPanel stamps={stamps} />
     }
     bottomLeft={
       <ControlButton
