@@ -11,8 +11,8 @@ const StampPanel:Component<{stamps:Stamps}> = ({
   <div class={
     stamps.isPanelOpen 
       ? style.stampPanelOpen 
-      : style.stampPanel}
-  >
+      : style.stampPanel
+  }>
     {
       stamps.available.map(
         (stamp:Grid) =>
