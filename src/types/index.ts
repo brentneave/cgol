@@ -4,9 +4,7 @@ export type Coord = { x: number, y: number }
 
 export type Cell = boolean
 
-export type Grid = Cell[][]
-
-export type Stamp = number[][]
+export type Grid = Cell[][] | number[][]
 
 export type Machine = {
   cells: Grid,
@@ -28,7 +26,7 @@ export type Render =  {
 }
 
 export type Stamps =  {
-  available: Stamp[],
+  available: Grid[],
   selected?: Grid,
   isDragging: boolean,
   isPanelOpen: boolean,
