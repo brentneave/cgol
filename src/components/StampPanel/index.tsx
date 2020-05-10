@@ -1,29 +1,25 @@
-// @ts-ignore
-import style from './style.css'
+import { Component } from 'hyperapp'
+import { Grid, Stamps } from '/types'
 
 import StampButton from '/components/StampButton'
 
-type f = ({
-  DragPattern,
-  DragPatternCancel,
-  stamps:Stamps,
-}) => any
+import style from './style.css'
 
-const StampPanel:f = ({
-  DragPattern = undefined,
-  DragPatternCancel = undefined,
+const StampPanel:Component<{stamps:Stamps}> = ({
   stamps,
 }) =>
-  <div class={stamps.isPanelOpen ? style.stampPanelOpen : style.stampPanel}>
+  <div class={
+    stamps.isPanelOpen 
+      ? style.stampPanelOpen 
+      : style.stampPanel}
+  >
     {
       stamps.available.map(
-        stamp =>
+        (stamp:Grid) =>
           <div class={style.stampPanelButton}>
             <StampButton
               isSelected={stamps.selected === stamp}
               stamp={stamp}
-              DragPattern={DragPattern}
-              DragPatternCancel={DragPatternCancel}
             />
           </div>
       )

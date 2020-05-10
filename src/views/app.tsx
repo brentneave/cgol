@@ -16,7 +16,6 @@ import ControlBar from '/components/ControlBar'
 import ControlButton from '/components/ControlButton'
 import RasterCells from '/components/RasterCells'
 import StampPanel from '/components/StampPanel'
-import VectorCells from '/components/VectorCells.tsx'
 
 // @ts-ignore
 import utils from '/styles/utils.css'
