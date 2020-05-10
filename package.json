@@ -7,7 +7,7 @@
     "start": "parcel src/index.html --open",
     "build": "parcel build src/index.html --no-source-maps --detailed-report",
     "lint": "eslint \"./src/**/*.{js,jsx}\" --fix",
-    "format": "prettier --write \"**/*.{js,jsx,json,md}\""
+    "format": "prettier --write \"**/*.{js,jsx,json,md,ts,tsx}\""
   },
   "dependencies": {
     "2d-array-rotation": "^2.1.1",
