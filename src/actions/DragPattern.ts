@@ -1,23 +1,16 @@
-import { State } from '/types'
+import { Action } from 'hyperapp'
 
-type f = (
-  state:State,
-  { pattern:Grid }
-) => State
+import { Grid, State } from '/types'
 
-const DragPattern:f = (
-  state,
-  { pattern }
-) => {
-  console.log('DragPattern', pattern)
-  return ({
-  ...state,
-  stamps: {
-    ...state.stamps,
-    selected: pattern,
-    isDragging: true,
-    isPanelOpen: false,
-  },
-})
-}
+const DragPattern:Action<State, Grid> = 
+  ( state, stamp ) => ({
+    ...state,
+    stamps: {
+      ...state.stamps,
+      selected: stamp,
+      isDragging: true,
+      isPanelOpen: false,
+    },
+  })
+
 export default DragPattern
