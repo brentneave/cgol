@@ -1,8 +1,8 @@
 export type Coord = { x: number; y: number }
 
-export type Cell = boolean
+export type Cell = boolean | number
 
-export type Grid = Cell[][] | number[][]
+export type Grid = Cell[][]
 
 export type Machine = {
   cells: Grid;
