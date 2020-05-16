@@ -1,8 +1,7 @@
+import { Action } from 'hyperapp'
 import { State } from '/types'
 
-type f = (state:State) => State
-
-const Start:f = state => ({
+const Start:Action<State> = state => ({
     ...state,
     machine: {
       ...state.machine,

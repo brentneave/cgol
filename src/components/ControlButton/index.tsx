@@ -1,10 +1,13 @@
+import { Component } from 'hyperapp'
 
-// @ts-ignore
 import style from './style.css'
 
-const ControlButton = ({
+const ControlButton:Component<{
+  isDisabled?:boolean,
+  label?:string,
+  onclick?
+}> = ({
   isDisabled = false,
-  key = '',
   label = undefined,
   onclick = undefined
 } = {}) =>

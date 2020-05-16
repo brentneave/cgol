@@ -1,18 +1,12 @@
+import { Action } from 'hyperapp'
 import { State } from '/types'
-import { isTaggedTemplateExpression } from 'typescript'
 
-type f = (
-  state:State,
-  {
-    clientX,
-    clientY
-  }:{
+const MouseMoved:Action<
+  State,
+  { 
     clientX:number,
-    clientY:number,
-  }
-) => State
-
-const MouseMoved:f = (
+    clientY:number 
+}> = (
   state,
   { clientX, clientY }
 ) => ({

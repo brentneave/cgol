@@ -1,13 +1,15 @@
+import { Component } from 'hyperapp'
+import { Grid } from '/types'
+
 import StampButton from '/components/StampButton'
+
+import DragPattern from '/actions/DragPattern'
+import DragPatternCancel from '/actions/DragPatternCancel'
 
 import gosperGliderGun from '/stamps/gosperGliderGun'
 import pulsar from '/stamps/pulsar'
 import rPentomino from '/stamps/rPentomino'
 import TwoEngineCorderShip from '/stamps/TwoEngineCorderShip'
-
-
-// @ts-ignore
-import style from './style.css'
 
 import { 
   cellsRotate90,
@@ -15,17 +17,19 @@ import {
   cellsRotate270
 } from '/utils/cellsRotate'
 
+// @ts-ignore
+import style from './style.css'
+
+
 const gosperGliderGun90 = cellsRotate90(gosperGliderGun)
-
 const gosperGliderGun180 = cellsRotate180(gosperGliderGun)
-
 const gosperGliderGun270 = cellsRotate270(gosperGliderGun)
 
-const StampBar = ({
-  draggingPattern = [[]],
-  DragPattern = () => {},
-  DragPatternCancel = () => {},
-} = {}) =>
+const StampBar:Component<{
+  draggingPattern:Grid
+}> = ({
+  draggingPattern
+}) =>
   <div class={style.stampBar}>
     {
       [
@@ -42,8 +46,6 @@ const StampBar = ({
             <StampButton
               isSelected={draggingPattern === stamp}
               stamp={stamp}
-              DragPattern={DragPattern}
-              DragPatternCancel={DragPatternCancel}
             />
           </div>
       )

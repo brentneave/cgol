@@ -1,11 +1,10 @@
+import { Action } from 'hyperapp'
 import { State } from '/types'
 
-type f = (
-  state:State,
-  { isOpen }:{ isOpen:boolean }
-) => State
-
-const StampPanelOpen:f = (
+const StampPanelOpen:Action<
+  State,
+  { isOpen: boolean }
+> = (
   state,
   { isOpen = false }
 ) => ({

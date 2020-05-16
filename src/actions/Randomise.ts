@@ -1,30 +1,29 @@
+import { Action } from 'hyperapp'
 import { Effect, State } from '/types'
 
 import cellsRandomise from '../utils/cellsRandomise'
 import effectAdd from '../utils/effectAdd'
 import updateCanvas from '/effects/updateCanvas'
 
-type f = (
-  state:State,
-  { chance }:{ chance:number }
-) => [
-  State,
-  [[Effect, State]]
-]
 
-const Randomise:f = (
+const Randomise:Action<
+  State,
+  { chance: number }
+> = (
   state,
   { chance }
-) =>
-  effectAdd(
-    updateCanvas,
-    {
-      ...state,
-      machine: {
-        ...state.machine,
-        cells: cellsRandomise(state.machine.cells, chance)
-      }
+) => {
+  const newState:State = {
+    ...state,
+    machine: {
+      ...state.machine,
+      cells: cellsRandomise(state.machine.cells, chance)
     }
-  )
+  }
+  return [ 
+    newState, 
+    [updateCanvas, newState]
+  ]
+}
 
 export default Randomise

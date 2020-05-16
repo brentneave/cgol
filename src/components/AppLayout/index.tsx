@@ -1,7 +1,14 @@
-// @ts-nocheck
+import { Element } from 'hyperapp'
+
 import styles from './styles.css'
 
-const AppLayout=({
+const AppLayout:Element<{
+  canvas:Element,
+  bottomLeft:Element,
+  bottomRight:Element,
+  stampPanel:Element,
+  cursor:Element,
+}>=({
   canvas,
   bottomLeft,
   bottomRight,

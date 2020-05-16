@@ -1,17 +1,16 @@
+import { Component } from 'hyperapp'
 import { Machine, Render, Stamps } from '/types'
 
-// @ts-ignore
+import DropPattern from '/actions/DropPattern'
+
 import styles from './styles.css'
 
-type f = (
-  DropPattern,
-  machine:Machine,
-  render:Render,
-  stamps:Stamps
-) => any
 
-const RasterCells:f = ({
-  DropPattern,
+const RasterCells:Component<{
+  machine:Machine
+  render:Render
+  stamps:Stamps
+}> = ({
   machine,
   render,
   stamps,

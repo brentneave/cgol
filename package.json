@@ -4,7 +4,7 @@
   "description": "Hyperapp PWA starter",
   "author": "Alexandre Lotte <dev@alexlotte.ca>",
   "scripts": {
-    "start": "parcel src/index.html --open",
+    "start": "rm -rf ./.cache/* && parcel src/index.html --open",
     "build": "parcel build src/index.html --no-source-maps --detailed-report",
     "lint": "eslint \"./src/**/*.{js,jsx}\" --fix",
     "format": "prettier --write \"**/*.{js,jsx,json,md,ts,tsx}\""

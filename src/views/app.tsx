@@ -1,7 +1,6 @@
+import { Component } from 'hyperapp'
 import { State } from '/types'
 
-import DragPattern from '/actions/DragPattern'
-import DragPatternCancel from '/actions/DragPatternCancel'
 import DropPattern from '/actions/DropPattern'
 import Randomise from '/actions/Randomise'
 import Reset from '/actions/Reset'
@@ -17,13 +16,9 @@ import ControlButton from '/components/ControlButton'
 import RasterCells from '/components/RasterCells'
 import StampPanel from '/components/StampPanel'
 
-// @ts-ignore
 import utils from '/styles/utils.css'
 
-
-type f = (state:State) => any
-
-const App:f = ({
+const App:Component<State> = ({
   machine,
   mouse,
   render,
@@ -33,7 +28,6 @@ const App:f = ({
     canvas={
       <RasterCells
         {...{ machine, render, stamps }}
-        DropPattern={DropPattern}
       />
     }
     stampPanel={
@@ -41,7 +35,6 @@ const App:f = ({
     }
     bottomLeft={
       <ControlButton
-        key="ctrl-add"
         onclick={[StampPanelOpen, { isOpen: !stamps.isPanelOpen }]}
         label={stamps.isPanelOpen ? 'Close' : 'Stamp'}
       />
@@ -49,13 +42,6 @@ const App:f = ({
     bottomRight={
       <ControlBar
         isRunning={machine.isRunning}
-        isStampPanelOpen={stamps.isPanelOpen}
-        StampPanelOpen={StampPanelOpen}
-        Reset={Reset}
-        Randomise={Randomise}
-        Start={Start}
-        Stop={Stop}
-        Tick={Tick}
       />
     }
     cursor={
