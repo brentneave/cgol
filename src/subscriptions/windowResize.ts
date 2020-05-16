@@ -1,10 +1,22 @@
-const windowResize = (dispatch, { action, canvasId }) => {
+import { Action } from 'hyperapp'
+import { State } from '/types'
+
+const windowResize = (
+  dispatch, 
+  { 
+    action, 
+    canvasId 
+  }: {
+    action: Action<State>;
+    canvasId: string;
+  }
+): () => void => {
   let running = true
 
   let lastHeight = 0
   let lastWidth = 0
 
-  const onResize = () => {
+  const onResize = (): void => {
     const canvas = document.getElementById(canvasId)
 
     if (canvas) {
@@ -29,7 +41,7 @@ const windowResize = (dispatch, { action, canvasId }) => {
 
   window.requestAnimationFrame(onResize)
 
-  return () => { running = false }
+  return (): void => { running = false }
 }
 
 export default windowResize
