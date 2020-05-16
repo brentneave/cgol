@@ -1,4 +1,4 @@
-import { Component } from 'hyperapp'
+import { Component, VNode } from 'hyperapp'
 import cellsMap from '/utils/cellsMap.ts'
 import { Grid } from '/types'
 
@@ -15,7 +15,7 @@ const VectorCells: Component<{cells: Grid; cellSize: number}> =
       height={cellSize * cells[0].length}
     >
       {
-        cellsMap(
+        cellsMap<VNode>(
           cells,
           (cells, cell, x, y) =>
             cell

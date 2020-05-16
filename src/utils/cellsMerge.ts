@@ -1,23 +1,14 @@
-import { Grid } from '/types'
+import { Cell, Grid } from '/types'
 
 import cellsMap from './cellsMap'
 
-
-type f = (
+const cellsMerge = (
   cells: Grid,
   pattern: Grid,
-  xOffset: number,
-  yOffset: number,
-) => Grid
-
-
-const cellsMerge: f = (
-  cells = [[]],
-  pattern = [[]],
   xOffset = 0,
   yOffset = 0,
-) =>
-  cellsMap(
+): Grid =>
+  cellsMap<Cell>(
     cells,
     (cells, cell, x, y) =>
       x >= xOffset &&

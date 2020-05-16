@@ -1,4 +1,4 @@
-import { Grid, Neighbours } from '/types'
+import { Coord, Grid, Neighbours } from '/types'
 
 import cellsMap from '/utils/cellsMap.ts'
 import getCellNeighbours from '/utils/getCellNeighbours'
@@ -12,7 +12,7 @@ type fAddNeighbours = (
 
 const addNeighbours: fAddNeighbours = cells => ({
   cells,
-  neighbours: cellsMap(
+  neighbours: cellsMap<Coord[]>(
     cells,
     (cells, cell, x, y) =>
       getCellNeighbours(cells, x, y)

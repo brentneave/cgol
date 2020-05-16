@@ -1,4 +1,4 @@
-import { Grid, Neighbours } from '/types'
+import { Cell, Grid, Neighbours } from '/types'
 
 import cellsMap from './cellsMap'
 import cellTick from './cellTick'
@@ -9,7 +9,7 @@ type f = (
 ) => Grid
 
 const cellsTick: f = (cells, neighbours) =>
-  cellsMap(
+  cellsMap<Cell>(
     cells,
     cellTick(neighbours)
   )
