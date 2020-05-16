@@ -1,19 +1,9 @@
 import { Grid, Cell } from '/types'
 
-type f = (
+const cellsMap = <T>(
   cells: Grid,
-  f: (
-    cells: Grid,
-    cell: Cell,
-    x: number,
-    y: number
-  ) => any
-) => any[][]
-
-const cellsMap: f = (
-  cells,
-  f,
-) =>
+  f: (cells: Grid, cell: Cell, x: number, y: number) => T,
+): T[][] =>
   cells.map(
     (column, x) =>
       column.map(
