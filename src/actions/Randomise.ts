@@ -1,8 +1,7 @@
 import { Action } from 'hyperapp'
 import { Effect, State } from '/types'
 
-import cellsRandomise from '../utils/cellsRandomise'
-import effectAdd from '../utils/effectAdd'
+import cellsCreate from '../utils/cellsCreate'
 import updateCanvas from '/effects/updateCanvas'
 
 
@@ -17,7 +16,7 @@ const Randomise:Action<
     ...state,
     machine: {
       ...state.machine,
-      cells: cellsRandomise(state.machine.cells, chance)
+      ...cellsCreate({ chance: 0.2 })
     }
   }
   return [ 

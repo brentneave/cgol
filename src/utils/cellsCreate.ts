@@ -33,7 +33,7 @@ type fCellsCreate = ({
 })
 
 const cellsCreate:fCellsCreate = ({
-  chance = 0.2,
+  chance = 0,
   width = 480,
   height = 270,
 }) =>
