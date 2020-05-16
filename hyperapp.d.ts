@@ -149,7 +149,7 @@ type Falsy = false | '' | 0 | null | undefined;
  *
  * @memberOf [App]
  */
-export function Lazy<P extends object>(props: { view: (props: P) => VNode | null, key?: string | number | null } & P): VNode;
+export function Lazy<P extends object>(props: { view: (props: P) => VNode | null; key?: string | number | null } & P): VNode;
 
 /** The set of properties that define a Hyperapp application.
  *
@@ -195,7 +195,7 @@ export type ClassAttribute = ClassAttributeItem | null | undefined;
 
 type ClassAttributeItem = (string | { [key: string]: any } | ClassAttributeArray);
 
-interface ClassAttributeArray extends Array<ClassAttributeItem> { }
+type ClassAttributeArray = Array<ClassAttributeItem>
 
 /**
  * The style attribute value of VNode.
@@ -226,7 +226,7 @@ export interface JSXAttribute extends EventAttributes {
 // /** @namespace [JSX] */
 declare global {
     namespace JSX {
-        interface Element extends VNode { }
+        type Element = VNode
         interface IntrinsicElements {
             [elemName: string]: JSXAttribute;
         }

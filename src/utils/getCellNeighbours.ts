@@ -19,12 +19,12 @@ type fGetCellNeighbours = (
 
 const getCellNeighbours: fGetCellNeighbours = (cells, x, y) => [
   constrain(cells, x - 1, y - 1 ),
-  constrain(cells, x,     y - 1 ),
+  constrain(cells, x, y - 1 ),
   constrain(cells, x + 1, y - 1 ),
-  constrain(cells, x - 1, y     ),
-  constrain(cells, x + 1, y     ),
+  constrain(cells, x - 1, y ),
+  constrain(cells, x + 1, y ),
   constrain(cells, x - 1, y + 1 ),
-  constrain(cells, x,     y + 1 ),
+  constrain(cells, x, y + 1 ),
   constrain(cells, x + 1, y + 1 ),
 ]
 

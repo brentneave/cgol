@@ -5,7 +5,7 @@ import cellsTick from '../utils/cellsTick'
 import updateCanvas from '/effects/updateCanvas'
 
 const Tick: Action<State> = state => {
-  const newState =  {
+  const newState = {
     ...state,
     machine: {
       ...state.machine,

@@ -33,7 +33,7 @@ const App: View<State> = ({
     }
     bottomRight={
       <ControlBar
-        isRunning={machine.isRunning}
+        isRunning= {machine.isRunning}
       />
     }
     cursor={

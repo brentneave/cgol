@@ -13,7 +13,7 @@ const updateCanvas: f = (
   }
 ) => {
 
-  const canvas =  document.getElementById(render.canvasId) as HTMLCanvasElement 
+  const canvas = document.getElementById(render.canvasId) as HTMLCanvasElement 
   if(!canvas) return
 
   const context = canvas.getContext('2d')

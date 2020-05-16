@@ -17,13 +17,13 @@ export type Mouse = {
 
 export type Neighbours = Coord[][][]
 
-export type Render =  {
+export type Render = {
   canvasId: string;
   foregroundColor: number | string;
   backgroundColor: number | string;
 }
 
-export type Stamps =  {
+export type Stamps = {
   available: Grid[];
   selected?: Grid;
   isDragging: boolean;
