@@ -1,10 +1,9 @@
 import { Component } from 'hyperapp'
-import { Machine, Render, Stamps } from '/types'
+import { Grid, Machine, Render, Stamps } from '/types'
 
 import DropPattern from '/actions/DropPattern'
 
 import styles from './styles.css'
-
 
 const RasterCells: Component<{
   machine: Machine;
@@ -24,10 +23,20 @@ const RasterCells: Component<{
       stamps.isDragging
       ? [
           DropPattern,
-          event => ({
+          ({
+            offsetX, 
+            offsetY
+          }: {
+            offsetX: number; 
+            offsetY: number;
+          }): {
+            pattern: Grid;
+            xOffset: number;
+            yOffset: number;
+          } => ({
             pattern: stamps.selected,
-            xOffset: Math.round(event.offsetX / machine.cellSize),
-            yOffset: Math.round(event.offsetY / machine.cellSize),
+            xOffset: Math.round(offsetX / machine.cellSize),
+            yOffset: Math.round(offsetY / machine.cellSize),
           })
         ]
       : null
