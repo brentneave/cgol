@@ -12,7 +12,7 @@ const gosperGliderGun90 = cellsRotate90(gosperGliderGun)
 const gosperGliderGun180 = cellsRotate180(gosperGliderGun)
 const gosperGliderGun270 = cellsRotate270(gosperGliderGun)
 
-const init:State = {
+const init: State = {
   machine: {
     ...cellsCreate({ 
       chance: 0.2

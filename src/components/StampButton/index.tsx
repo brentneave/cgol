@@ -8,10 +8,10 @@ import VectorCells from '/components/VectorCells'
 
 import style from './style.css'
 
-const StampButton:Component<{
-  isSelected?:boolean,
-  stamp?:Grid,
-  title?:string
+const StampButton: Component<{
+  isSelected?: boolean;
+  stamp?: Grid;
+  title?: string;
 }> = ({
   isSelected = false, 
   stamp = [[]],

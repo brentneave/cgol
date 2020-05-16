@@ -5,7 +5,7 @@ import cellShouldSurvive from './cellShouldSurvive'
 
 
 type f = (
-  neighbours:Neighbours
+  neighbours: Neighbours
 ) => (
   cells: Grid,
   cell: boolean,
@@ -13,9 +13,10 @@ type f = (
   y: number
 ) => boolean
 
-const cellTick:f = neighbours => (cells, cell, x, y) =>
-  cell
-    ? cellShouldSurvive(cells, neighbours, x, y)
-    : cellShouldSpawn(cells, neighbours, x, y)
+const cellTick = (neighbours: Neighbours) => 
+  (cells: Grid, cell: boolean, x: number, y: number): boolean =>
+    cell
+      ? cellShouldSurvive(cells, neighbours, x, y)
+      : cellShouldSpawn(cells, neighbours, x, y)
 
 export default cellTick

@@ -4,14 +4,14 @@ import cellsMap from './cellsMap'
 
 
 type f = (
-  cells:Grid,
-  pattern:Grid,
-  xOffset:number,
-  yOffset:number,
+  cells: Grid,
+  pattern: Grid,
+  xOffset: number,
+  yOffset: number,
 ) => Grid
 
 
-const cellsMerge:f = (
+const cellsMerge: f = (
   cells = [[]],
   pattern = [[]],
   xOffset = 0,

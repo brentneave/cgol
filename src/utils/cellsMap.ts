@@ -1,16 +1,16 @@
 import { Grid, Cell } from '/types'
 
 type f = (
-  cells:Grid,
+  cells: Grid,
   f: (
-    cells:Grid,
-    cell:Cell,
-    x:number,
-    y:number
+    cells: Grid,
+    cell: Cell,
+    x: number,
+    y: number
   ) => any
 ) => any[][]
 
-const cellsMap:f = (
+const cellsMap: f = (
   cells,
   f,
 ) =>

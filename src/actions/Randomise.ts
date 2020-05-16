@@ -1,23 +1,23 @@
 import { Action } from 'hyperapp'
-import { Effect, State } from '/types'
+import { State } from '/types'
 
 import cellsCreate from '../utils/cellsCreate'
 import updateCanvas from '/effects/updateCanvas'
 
 
-const Randomise:Action<
+const Randomise: Action<
   State,
-  { chance: number }
+  { chance?: number }
 > = (
   state,
-  { chance }
+  { chance = 0.2 } = {}
 ) => {
-  const newState:State = {
+  const newState: State = {
     ...state,
     machine: {
       ...state.machine,
       ...cellsCreate({ 
-        chance: 0.2,
+        chance,
         height: state.machine.cells[0].length,
         width: state.machine.cells.length,
       })

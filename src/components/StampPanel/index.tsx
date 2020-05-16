@@ -5,7 +5,7 @@ import StampButton from '/components/StampButton'
 
 import style from './style.css'
 
-const StampPanel:Component<{stamps:Stamps}> = ({
+const StampPanel: Component<{stamps: Stamps}> = ({
   stamps,
 }) =>
   <div class={
@@ -15,7 +15,7 @@ const StampPanel:Component<{stamps:Stamps}> = ({
   }>
     {
       stamps.available.map(
-        (stamp:Grid) =>
+        (stamp: Grid) =>
           <div class={style.stampPanelButton}>
             <StampButton
               isSelected={stamps.selected === stamp}

@@ -1,24 +1,23 @@
 import { Action } from 'hyperapp'
-import { Effect, State } from '/types'
+import { State } from '/types'
 
 import cellsCreate from '/utils/cellsCreate'
 import cellsMerge from '/utils/cellsMerge'
-import effectAdd from '../utils/effectAdd'
 import updateCanvas from '/effects/updateCanvas'
 
 
 
-const SetSize:Action<
+const SetSize: Action<
   State,
   {
-    width:number
-    height:number
+    width: number;
+    height: number;
   }
 > = (state, {
   width = 480,
   height = 320,
 }) => {
-  const newState:State = {
+  const newState: State = {
     ...state,
     machine: {
       ...state.machine,

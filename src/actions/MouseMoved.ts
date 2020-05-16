@@ -1,11 +1,11 @@
 import { Action } from 'hyperapp'
 import { State } from '/types'
 
-const MouseMoved:Action<
+const MouseMoved: Action<
   State,
   { 
-    clientX:number,
-    clientY:number 
+    clientX: number;
+    clientY: number; 
 }> = (
   state,
   { clientX, clientY }

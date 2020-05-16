@@ -4,13 +4,13 @@ import cellsMap from '/utils/cellsMap.ts'
 import getCellNeighbours from '/utils/getCellNeighbours'
 
 type fAddNeighbours = (
-  cells:Grid
+  cells: Grid
 ) => ({
-  cells:Grid,
-  neighbours:Neighbours
+  cells: Grid;
+  neighbours: Neighbours;
 })
 
-const addNeighbours:fAddNeighbours = cells => ({
+const addNeighbours: fAddNeighbours = cells => ({
   cells,
   neighbours: cellsMap(
     cells,
@@ -24,15 +24,15 @@ type fCellsCreate = ({
   width,
   height,
 }: {
-  chance?:number,
-  width?:number,
-  height?:number,
+  chance?: number;
+  width?: number;
+  height?: number;
 }) => ({
-  cells:Grid,
-  neighbours:Neighbours
+  cells: Grid;
+  neighbours: Neighbours;
 })
 
-const cellsCreate:fCellsCreate = ({
+const cellsCreate: fCellsCreate = ({
   chance = 0,
   width = 480,
   height = 270,

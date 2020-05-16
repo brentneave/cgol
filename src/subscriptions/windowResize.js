@@ -1,8 +1,8 @@
 const windowResize = (dispatch, { action, canvasId }) => {
-  var running = true
+  let running = true
 
-  var lastHeight = 0
-  var lastWidth = 0
+  let lastHeight = 0
+  let lastWidth = 0
 
   const onResize = () => {
     const canvas = document.getElementById(canvasId)

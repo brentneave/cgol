@@ -1,8 +1,9 @@
 module.exports = {
-  parser: 'babel-eslint',
+  parser: '@typescript-eslint/parser',
   extends: [
-    'standard',
-    'plugin:jsx-a11y/recommended'
+    'eslint:recommended',
+    'plugin:@typescript-eslint/eslint-recommended',
+    'plugin:@typescript-eslint/recommended',
   ],
   plugins: ['import', 'react', 'jsx-a11y'],
   rules: {

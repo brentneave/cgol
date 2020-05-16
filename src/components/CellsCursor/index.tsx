@@ -3,10 +3,10 @@ import { Grid, Mouse } from '/types'
 
 import VectorCells from '/components/VectorCells.tsx'
 
-const CellsCursor:Component<{
-  cellSize:number,
-  draggingPattern:Grid,
-  mouse:Mouse,
+const CellsCursor: Component<{
+  cellSize: number;
+  draggingPattern: Grid;
+  mouse: Mouse;
 }> = ({
   cellSize,
   draggingPattern,

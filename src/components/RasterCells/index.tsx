@@ -6,10 +6,10 @@ import DropPattern from '/actions/DropPattern'
 import styles from './styles.css'
 
 
-const RasterCells:Component<{
-  machine:Machine
-  render:Render
-  stamps:Stamps
+const RasterCells: Component<{
+  machine: Machine;
+  render: Render;
+  stamps: Stamps;
 }> = ({
   machine,
   render,

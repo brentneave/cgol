@@ -2,10 +2,10 @@ import { State } from '/types'
 
 type f = (
   dispatch,
-  state:State
+  state: State
 ) => void
 
-const updateCanvas:f = (
+const updateCanvas: f = (
   dispatch,
   {
     machine,
@@ -13,7 +13,7 @@ const updateCanvas:f = (
   }
 ) => {
 
-  const canvas = <HTMLCanvasElement> document.getElementById(render.canvasId)
+  const canvas =  document.getElementById(render.canvasId) as HTMLCanvasElement 
   if(!canvas) return
 
   const context = canvas.getContext('2d')

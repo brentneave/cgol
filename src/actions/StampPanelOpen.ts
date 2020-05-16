@@ -1,7 +1,7 @@
 import { Action } from 'hyperapp'
 import { State } from '/types'
 
-const StampPanelOpen:Action<
+const StampPanelOpen: Action<
   State,
   { isOpen: boolean }
 > = (

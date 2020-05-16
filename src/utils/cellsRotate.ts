@@ -10,8 +10,8 @@ type f = (
   cells: Stamp
 ) => Stamp
 
-export const cellsRotate90:f = cells => rotate90(cells)
+export const cellsRotate90: f = cells => rotate90(cells)
 
-export const cellsRotate180:f = cells => rotate180(cells)
+export const cellsRotate180: f = cells => rotate180(cells)
 
-export const cellsRotate270:f = cells => rotate270(cells)
+export const cellsRotate270: f = cells => rotate270(cells)

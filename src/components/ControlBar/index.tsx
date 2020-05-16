@@ -1,5 +1,4 @@
-import { Component, Action } from 'hyperapp'
-import { State } from '/types'
+import { Component } from 'hyperapp'
 
 import Randomise from '/actions/Randomise'
 import Reset from '/actions/Reset'
@@ -11,8 +10,8 @@ import ControlButton from '/components/ControlButton'
 
 import style from './style.css'
 
-const ControlBar:Component<{
-  isRunning:boolean
+const ControlBar: Component<{
+  isRunning: boolean;
 }>= ({
   isRunning
 }) =>

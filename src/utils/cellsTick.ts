@@ -8,7 +8,7 @@ type f = (
   neighbours: Neighbours
 ) => Grid
 
-const cellsTick:f = (cells, neighbours) =>
+const cellsTick: f = (cells, neighbours) =>
   cellsMap(
     cells,
     cellTick(neighbours)

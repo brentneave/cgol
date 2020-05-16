@@ -8,7 +8,7 @@ type f = (
   [[Effect, State]]
 ]
 
-const effectAdd:f = (
+const effectAdd: f = (
   effect,
   state
 ) => [

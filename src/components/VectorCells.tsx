@@ -3,7 +3,7 @@ import cellsMap from '/utils/cellsMap.ts'
 import { Grid } from '/types'
 
 
-const VectorCells:Component<{cells:Grid, cellSize:number}> = 
+const VectorCells: Component<{cells: Grid; cellSize: number}> = 
   ({
     cells = [[]],
     cellSize = 1,

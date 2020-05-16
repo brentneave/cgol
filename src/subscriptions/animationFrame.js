@@ -1,5 +1,5 @@
 const animationFrame = (dispatch, { action }) => {
-  var running = true
+  let running = true
 
   const frame = () => {
     dispatch(action)

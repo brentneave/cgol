@@ -1,15 +1,15 @@
 import { Grid, Neighbours } from '/types'
 
 type f = (
-  cells:Grid,
-  neighbours:Neighbours,
-  x:number,
-  y:number,
+  cells: Grid,
+  neighbours: Neighbours,
+  x: number,
+  y: number,
 ) => number
 
-const getNumberOfLiveNeighbours:f = (cells, neighbours, x, y) => {
-  var n = 0
-  for(var i = 0; i < neighbours[x][y].length; i++) {
+const getNumberOfLiveNeighbours: f = (cells, neighbours, x, y) => {
+  let n = 0
+  for(let i = 0; i < neighbours[x][y].length; i++) {
     if(cells[
       neighbours[x][y][i].x
     ][

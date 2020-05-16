@@ -4,11 +4,11 @@ import { State } from '/types'
 import updateCanvas from '/effects/updateCanvas'
 import cellsMerge from '../utils/cellsMerge'
 
-const DropPattern:Action<
+const DropPattern: Action<
   State,
   {
-    xOffset:number,
-    yOffset:number
+    xOffset: number;
+    yOffset: number;
   }
 > = (
   state,
@@ -17,7 +17,7 @@ const DropPattern:Action<
     yOffset = 0,
   }
 ) => {
-  const newState:State = {
+  const newState: State = {
     ...state,
     machine: {
       ...state.machine,

@@ -1,7 +1,7 @@
 import { Action } from 'hyperapp'
 import { State } from '/types'
 
-const Stop:Action<State> = state => ({
+const Stop: Action<State> = state => ({
     ...state,
     machine: {
       ...state.machine,

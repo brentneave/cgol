@@ -1,7 +1,7 @@
 import { Action } from 'hyperapp'
 import { State } from '/types'
 
-const DragPatternCancel:Action<State> = state => ({
+const DragPatternCancel: Action<State> = state => ({
   ...state,
   stamps: {
     ...state.stamps,

@@ -4,12 +4,12 @@ import cellsCreate from '/utils/cellsCreate'
 import effectAdd from '../utils/effectAdd'
 import updateCanvas from '/effects/updateCanvas'
 
-type f = (state:State) => [
+type f = (state: State) => [
   State,
   [[Effect, State]]
 ]
 
-const Reset:f = (
+const Reset: f = (
   state
 ) =>
   effectAdd(

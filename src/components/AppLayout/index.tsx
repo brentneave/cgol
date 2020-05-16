@@ -2,12 +2,12 @@ import { Component } from 'hyperapp'
 
 import styles from './styles.css'
 
-const AppLayout:Component<{
-  canvas,
-  bottomLeft,
-  bottomRight,
-  stampPanel,
-  cursor,
+const AppLayout: Component<{
+  canvas;
+  bottomLeft;
+  bottomRight;
+  stampPanel;
+  cursor;
 }>=({
   canvas,
   bottomLeft,

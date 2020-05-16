@@ -2,10 +2,10 @@ import { Component } from 'hyperapp'
 
 import style from './style.css'
 
-const ControlButton:Component<{
-  isDisabled?:boolean,
-  label?:string,
-  onclick?
+const ControlButton: Component<{
+  isDisabled?: boolean;
+  label?: string;
+  onclick?;
 }> = ({
   isDisabled = false,
   label = undefined,

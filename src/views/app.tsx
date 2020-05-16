@@ -10,9 +10,7 @@ import ControlButton from '/components/ControlButton'
 import RasterCells from '/components/RasterCells'
 import StampPanel from '/components/StampPanel'
 
-import utils from '/styles/utils.css'
-
-const App:View<State> = ({
+const App: View<State> = ({
   machine,
   mouse,
   render,

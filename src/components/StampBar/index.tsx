@@ -3,9 +3,6 @@ import { Grid } from '/types'
 
 import StampButton from '/components/StampButton'
 
-import DragPattern from '/actions/DragPattern'
-import DragPatternCancel from '/actions/DragPatternCancel'
-
 import gosperGliderGun from '/stamps/gosperGliderGun'
 import pulsar from '/stamps/pulsar'
 import rPentomino from '/stamps/rPentomino'
@@ -17,7 +14,6 @@ import {
   cellsRotate270
 } from '/utils/cellsRotate'
 
-// @ts-ignore
 import style from './style.css'
 
 
@@ -25,8 +21,8 @@ const gosperGliderGun90 = cellsRotate90(gosperGliderGun)
 const gosperGliderGun180 = cellsRotate180(gosperGliderGun)
 const gosperGliderGun270 = cellsRotate270(gosperGliderGun)
 
-const StampBar:Component<{
-  draggingPattern:Grid
+const StampBar: Component<{
+  draggingPattern: Grid;
 }> = ({
   draggingPattern
 }) =>
