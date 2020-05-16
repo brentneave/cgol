@@ -16,7 +16,11 @@ const Randomise:Action<
     ...state,
     machine: {
       ...state.machine,
-      ...cellsCreate({ chance: 0.2 })
+      ...cellsCreate({ 
+        chance: 0.2,
+        height: state.machine.cells[0].length,
+        width: state.machine.cells.length,
+      })
     }
   }
   return [ 
