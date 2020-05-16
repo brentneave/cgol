@@ -1,13 +1,7 @@
-import { Component } from 'hyperapp'
+import { View } from 'hyperapp'
 import { State } from '/types'
 
-import DropPattern from '/actions/DropPattern'
-import Randomise from '/actions/Randomise'
-import Reset from '/actions/Reset'
 import StampPanelOpen from '../actions/StampPanelOpen'
-import Start from '/actions/Start'
-import Stop from '/actions/Stop'
-import Tick from '/actions/Tick'
 
 import AppLayout from '/components/AppLayout'
 import CellsCursor from '/components/CellsCursor'
@@ -18,7 +12,7 @@ import StampPanel from '/components/StampPanel'
 
 import utils from '/styles/utils.css'
 
-const App:Component<State> = ({
+const App:View<State> = ({
   machine,
   mouse,
   render,

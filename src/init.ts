@@ -14,7 +14,9 @@ const gosperGliderGun270 = cellsRotate270(gosperGliderGun)
 
 const init:State = {
   machine: {
-    ...cellsCreate({ chance: 0.2 }),
+    ...cellsCreate({ 
+      chance: 0.2
+    }),
     cellSize: 3,
     isRunning: true,
   },
