@@ -1,3 +1,4 @@
+import './styles/base.css'
 import animationFrame from '/subscriptions/animationFrame'
 import {app} from 'hyperapp'
 import init from '/init'
