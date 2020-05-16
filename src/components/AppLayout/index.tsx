@@ -1,13 +1,13 @@
-import { Element } from 'hyperapp'
+import { Component } from 'hyperapp'
 
 import styles from './styles.css'
 
-const AppLayout:Element<{
-  canvas:Element,
-  bottomLeft:Element,
-  bottomRight:Element,
-  stampPanel:Element,
-  cursor:Element,
+const AppLayout:Component<{
+  canvas,
+  bottomLeft,
+  bottomRight,
+  stampPanel,
+  cursor,
 }>=({
   canvas,
   bottomLeft,
@@ -16,17 +16,17 @@ const AppLayout:Element<{
   cursor,
 }) =>
   <div class={styles.appLayout}>
-    <div class={styles.appLayout__canvas}>
+    <div class={styles.appLayoutCanvas}>
       {canvas}
     </div>
-    <div class={styles.appLayout__bottom}>
-      <div class={styles.appLayout__stampPanel}>
+    <div>
+      <div class={styles.appLayoutStampPanel}>
         {stampPanel}
       </div>
-      <div class={styles.appLayout__bottomLeft}>
+      <div class={styles.appLayoutBottomLeft}>
         {bottomLeft}
       </div>
-      <div class={styles.appLayout__bottomRight}>
+      <div class={styles.appLayoutBottomRight}>
         {bottomRight}
       </div>
     </div>
