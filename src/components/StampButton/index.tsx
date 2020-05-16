@@ -12,7 +12,7 @@ const StampButton: Component<{
 }> = ({
   isSelected = false,
   stamp = [[]],
-  title = "",
+  title = '',
 } = {}) =>
   <button
     title={title}

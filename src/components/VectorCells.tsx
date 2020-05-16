@@ -9,7 +9,7 @@ const VectorCells: Component<{cells: Grid; cellSize: number}> =
     cellSize = 1,
   }) =>
     <svg
-      fill="currentColor"
+      fill='currentColor'
       viewBox={`0 0 ${cells.length} ${cells[0].length}`}
       width={cellSize * cells.length}
       height={cellSize * cells[0].length}

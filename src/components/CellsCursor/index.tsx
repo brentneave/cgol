@@ -14,8 +14,8 @@ const CellsCursor: Component<{
   <div
     style={{
       color: 'white',
-      width: `100px`,
-      height: `100px`,
+      width: '100px',
+      height: '100px',
       position: 'fixed',
       left: 0,
       pointerEvents: 'none',
