@@ -2,7 +2,6 @@ module.exports = {
   parser: 'babel-eslint',
   extends: [
     'standard',
-    'plugin:prettier/recommended',
     'plugin:jsx-a11y/recommended'
   ],
   plugins: ['import', 'react', 'jsx-a11y'],

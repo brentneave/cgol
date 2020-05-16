@@ -1,24 +1,22 @@
 const windowResize = (dispatch, { action, canvasId }) => {
-
   var running = true
 
   var lastHeight = 0
   var lastWidth = 0
 
   const onResize = () => {
-
     const canvas = document.getElementById(canvasId)
 
-    if(canvas) {
+    if (canvas) {
       const width = Number(window.innerWidth)
       const height = Number(window.innerHeight)
 
-      if(width !== lastWidth || height !== lastHeight) {
+      if (width !== lastWidth || height !== lastHeight) {
         dispatch(
-          action, 
+          action,
           {
             height,
-            width,
+            width
           }
         )
         lastHeight = height
@@ -26,7 +24,7 @@ const windowResize = (dispatch, { action, canvasId }) => {
       }
     }
 
-    if(running) window.requestAnimationFrame(onResize)
+    if (running) window.requestAnimationFrame(onResize)
   }
 
   window.requestAnimationFrame(onResize)
@@ -34,4 +32,4 @@ const windowResize = (dispatch, { action, canvasId }) => {
   return () => { running = false }
 }
 
-export default windowResize;
+export default windowResize

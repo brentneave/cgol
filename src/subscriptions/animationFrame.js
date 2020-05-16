@@ -1,9 +1,9 @@
 const animationFrame = (dispatch, { action }) => {
-  var running = true;
+  var running = true
 
   const frame = () => {
     dispatch(action)
-    if(running) window.requestAnimationFrame(frame)
+    if (running) window.requestAnimationFrame(frame)
   }
 
   window.requestAnimationFrame(frame)
@@ -11,4 +11,4 @@ const animationFrame = (dispatch, { action }) => {
   return () => { running = false }
 }
 
-export default animationFrame;
+export default animationFrame
