@@ -1,4 +1,4 @@
-import { Grid, Neighbours } from '/types'
+import {Grid, Neighbours} from '/types'
 
 import getNumberOfLiveNeighbours from './getNumberOfLiveNeighbours'
 
@@ -16,7 +16,7 @@ const cellShouldSpawn: f = (cells, neighbours, x, y) =>
   cells[x][y]
     ? true
     : shouldSpawn(
-        getNumberOfLiveNeighbours(cells, neighbours, x, y)
-      )
+      getNumberOfLiveNeighbours(cells, neighbours, x, y)
+    )
 
 export default cellShouldSpawn

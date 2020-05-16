@@ -1,4 +1,4 @@
-import { Component } from 'hyperapp'
+import {Component} from 'hyperapp'
 
 import style from './style.css'
 
@@ -9,7 +9,7 @@ const ControlButton: Component<{
 }> = ({
   isDisabled = false,
   label = undefined,
-  onclick = undefined
+  onclick = undefined,
 } = {}) =>
   <button
     class={style.controlButton}

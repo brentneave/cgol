@@ -1,6 +1,5 @@
-import { Component } from 'hyperapp'
-import { Grid, Mouse } from '/types'
-
+import {Grid, Mouse} from '/types'
+import {Component} from 'hyperapp'
 import VectorCells from '/components/VectorCells.tsx'
 
 const CellsCursor: Component<{
@@ -10,9 +9,9 @@ const CellsCursor: Component<{
 }> = ({
   cellSize,
   draggingPattern,
-  mouse
+  mouse,
 }) =>
-  <div 
+  <div
     style={{
       color: 'white',
       width: `100px`,

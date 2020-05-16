@@ -1,4 +1,4 @@
-import { Grid, Neighbours } from '/types'
+import {Grid, Neighbours} from '/types'
 
 import cellShouldSpawn from './cellShouldSpawn'
 import cellShouldSurvive from './cellShouldSurvive'
@@ -13,7 +13,7 @@ type f = (
   y: number
 ) => boolean
 
-const cellTick = (neighbours: Neighbours) => 
+const cellTick = (neighbours: Neighbours) =>
   (cells: Grid, cell: boolean, x: number, y: number): boolean =>
     cell
       ? cellShouldSurvive(cells, neighbours, x, y)

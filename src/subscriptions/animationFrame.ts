@@ -1,9 +1,9 @@
-import { Action } from 'hyperapp'
-import { State } from '/types'
+import {Action} from 'hyperapp'
+import {State} from '/types'
 
 const animationFrame = (
-  dispatch, 
-  { action }: {action: Action<State>}
+  dispatch,
+  {action}: {action: Action<State>}
 ): () => void => {
   let running = true
 

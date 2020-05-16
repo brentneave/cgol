@@ -1,9 +1,9 @@
-import { Action } from 'hyperapp'
-import { State } from '/types'
+import {Action} from 'hyperapp'
+import {State} from '/types'
 
 const mouseMove = (
-  dispatch, 
-  { action }: { action: Action<State, MouseEvent>}
+  dispatch,
+  {action}: { action: Action<State, MouseEvent>}
 ): () => void => {
   const move = (event: MouseEvent): void => {
     dispatch(action, event)
@@ -11,8 +11,8 @@ const mouseMove = (
 
   document.addEventListener('mousemove', move)
 
-  return (): void => { 
-    document.removeEventListener('mousemove', move) 
+  return (): void => {
+    document.removeEventListener('mousemove', move)
   }
 }
 

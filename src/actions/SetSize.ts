@@ -1,10 +1,9 @@
-import { Action } from 'hyperapp'
-import { State } from '/types'
+import {Action} from 'hyperapp'
+import {State} from '/types'
 
 import cellsCreate from '/utils/cellsCreate'
 import cellsMerge from '/utils/cellsMerge'
 import updateCanvas from '/effects/updateCanvas'
-
 
 
 const SetSize: Action<
@@ -39,15 +38,14 @@ const SetSize: Action<
         chance: 0,
         width: Math.ceil(width / state.machine.cellSize),
         height: Math.ceil(height / state.machine.cellSize),
-      }).neighbours
-    }
+      }).neighbours,
+    },
   }
 
   return [
     newState,
-    [updateCanvas, newState]
+    [updateCanvas, newState],
   ]
-
 }
 
 export default SetSize

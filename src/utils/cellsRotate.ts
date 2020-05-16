@@ -1,14 +1,13 @@
-import { Stamp } from '/types'
-
 import {
-  rotate90,
   rotate180,
   rotate270,
+  rotate90,
 } from '2d-array-rotation'
+import {Grid} from '/types'
 
 type f = (
-  cells: Stamp
-) => Stamp
+  cells: Grid
+) => Grid
 
 export const cellsRotate90: f = cells => rotate90(cells)
 

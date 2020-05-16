@@ -1,9 +1,9 @@
-import { Component, VNode } from 'hyperapp'
+import {Component, VNode} from 'hyperapp'
+import {Grid} from '/types'
 import cellsMap from '/utils/cellsMap.ts'
-import { Grid } from '/types'
 
 
-const VectorCells: Component<{cells: Grid; cellSize: number}> = 
+const VectorCells: Component<{cells: Grid; cellSize: number}> =
   ({
     cells = [[]],
     cellSize = 1,
@@ -20,11 +20,11 @@ const VectorCells: Component<{cells: Grid; cellSize: number}> =
           (cells, cell, x, y) =>
             cell
               ? <rect
-                  x={x}
-                  y={y}
-                  width={1}
-                  height={1}
-                />
+                x={x}
+                y={y}
+                width={1}
+                height={1}
+              />
               : null
         )
       }

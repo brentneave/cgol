@@ -1,7 +1,6 @@
-import { Cell, Grid, Neighbours } from '/types'
-
-import cellsMap from './cellsMap'
+import {Cell, Grid, Neighbours} from '/types'
 import cellTick from './cellTick'
+import cellsMap from './cellsMap'
 
 type f = (
   cells: Grid,

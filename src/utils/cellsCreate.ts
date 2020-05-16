@@ -1,4 +1,4 @@
-import { Coord, Grid, Neighbours } from '/types'
+import {Coord, Grid, Neighbours} from '/types'
 
 import cellsMap from '/utils/cellsMap.ts'
 import getCellNeighbours from '/utils/getCellNeighbours'

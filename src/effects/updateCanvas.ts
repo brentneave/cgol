@@ -1,4 +1,4 @@
-import { State } from '/types'
+import {State} from '/types'
 
 type f = (
   dispatch,
@@ -9,12 +9,11 @@ const updateCanvas: f = (
   dispatch,
   {
     machine,
-    render
+    render,
   }
 ) => {
-
-  const canvas = document.getElementById(render.canvasId) as HTMLCanvasElement 
-  if(!canvas) return
+  const canvas = document.getElementById(render.canvasId) as HTMLCanvasElement
+  if (!canvas) return
 
   const context = canvas.getContext('2d')
 
@@ -30,10 +29,10 @@ const updateCanvas: f = (
   context.fillStyle = 'rgba(64, 15, 0, 0.8)'
 
   machine.cells.forEach(
-    (column, x ) => {
+    (column, x) => {
       column.forEach(
         (cell, y) => {
-          if(cell) {
+          if (cell) {
             context.fillRect(
               machine.cellSize * x,
               machine.cellSize * y,

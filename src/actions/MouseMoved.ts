@@ -1,14 +1,14 @@
-import { Action } from 'hyperapp'
-import { State } from '/types'
+import {Action} from 'hyperapp'
+import {State} from '/types'
 
 const MouseMoved: Action<
   State,
-  { 
+  {
     clientX: number;
-    clientY: number; 
+    clientY: number;
 }> = (
   state,
-  { clientX, clientY }
+  {clientX, clientY}
 ) => ({
   ...state,
   mouse: {
@@ -16,8 +16,8 @@ const MouseMoved: Action<
     position: {
       x: clientX,
       y: clientY,
-    }
-  }
+    },
+  },
 })
 
 export default MouseMoved

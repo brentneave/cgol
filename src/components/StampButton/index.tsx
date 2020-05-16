@@ -1,11 +1,8 @@
-import { Component } from 'hyperapp'
-import { Grid } from '/types'
-
+import {Component} from 'hyperapp'
 import DragPattern from '/actions/DragPattern'
 import DragPatternCancel from '/actions/DragPatternCancel'
-
+import {Grid} from '/types'
 import VectorCells from '/components/VectorCells'
-
 import style from './style.css'
 
 const StampButton: Component<{
@@ -13,9 +10,9 @@ const StampButton: Component<{
   stamp?: Grid;
   title?: string;
 }> = ({
-  isSelected = false, 
+  isSelected = false,
   stamp = [[]],
-  title = ""
+  title = "",
 } = {}) =>
   <button
     title={title}
@@ -28,7 +25,7 @@ const StampButton: Component<{
       isSelected
         ? [ DragPatternCancel ]
         : [ DragPattern, stamp ]
-  }
+    }
   >
     <VectorCells
       cellSize={2}

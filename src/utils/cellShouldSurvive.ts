@@ -1,4 +1,4 @@
-import { Grid, Neighbours } from '/types'
+import {Grid, Neighbours} from '/types'
 
 import getNumberOfLiveNeighbours from './getNumberOfLiveNeighbours'
 
@@ -16,8 +16,8 @@ type fn = (
 const cellShouldSurvive: fn = (cells, neighbours, x, y) =>
   cells[x][y]
     ? shouldSurvive(
-        getNumberOfLiveNeighbours(cells, neighbours, x, y)
-      )
+      getNumberOfLiveNeighbours(cells, neighbours, x, y)
+    )
     : false
 
 export default cellShouldSurvive

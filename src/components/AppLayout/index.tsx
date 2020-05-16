@@ -1,14 +1,14 @@
-import { Component } from 'hyperapp'
+import {Component, VNode} from 'hyperapp'
 
 import styles from './styles.css'
 
 const AppLayout: Component<{
-  canvas;
-  bottomLeft;
-  bottomRight;
-  stampPanel;
-  cursor;
-}>=({
+  canvas: VNode;
+  bottomLeft: VNode;
+  bottomRight: VNode;
+  stampPanel: VNode;
+  cursor: VNode;
+}> = ({
   canvas,
   bottomLeft,
   bottomRight,

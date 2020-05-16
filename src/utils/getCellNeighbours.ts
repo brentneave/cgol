@@ -1,4 +1,4 @@
-import { Coord, Grid } from '/types'
+import {Coord, Grid} from '/types'
 
 type fConstrain = (
   cells: Grid,
@@ -18,14 +18,14 @@ type fGetCellNeighbours = (
 ) => Coord[]
 
 const getCellNeighbours: fGetCellNeighbours = (cells, x, y) => [
-  constrain(cells, x - 1, y - 1 ),
-  constrain(cells, x, y - 1 ),
-  constrain(cells, x + 1, y - 1 ),
-  constrain(cells, x - 1, y ),
-  constrain(cells, x + 1, y ),
-  constrain(cells, x - 1, y + 1 ),
-  constrain(cells, x, y + 1 ),
-  constrain(cells, x + 1, y + 1 ),
+  constrain(cells, x - 1, y - 1),
+  constrain(cells, x, y - 1),
+  constrain(cells, x + 1, y - 1),
+  constrain(cells, x - 1, y),
+  constrain(cells, x + 1, y),
+  constrain(cells, x - 1, y + 1),
+  constrain(cells, x, y + 1),
+  constrain(cells, x + 1, y + 1),
 ]
 
 export default getCellNeighbours

@@ -1,4 +1,4 @@
-import { Cell, Grid } from '/types'
+import {Cell, Grid} from '/types'
 
 import cellsMap from './cellsMap'
 

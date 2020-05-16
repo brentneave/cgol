@@ -1,16 +1,12 @@
-import { Component } from 'hyperapp'
-import { Grid, Stamps } from '/types'
-
+import {Grid, Stamps} from '/types'
+import {Component} from 'hyperapp'
 import StampButton from '/components/StampButton'
-
 import style from './style.css'
 
-const StampPanel: Component<{stamps: Stamps}> = ({
-  stamps,
-}) =>
+const StampPanel: Component<{stamps: Stamps}> = ({stamps}) =>
   <div class={
-    stamps.isPanelOpen 
-      ? style.stampPanelOpen 
+    stamps.isPanelOpen
+      ? style.stampPanelOpen
       : style.stampPanel
   }>
     {

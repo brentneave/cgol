@@ -1,8 +1,8 @@
-import { Action } from 'hyperapp'
-import { State } from '/types'
+import {Action} from 'hyperapp'
+import {State} from '/types'
 
+import cellsMerge from '/utils/cellsMerge'
 import updateCanvas from '/effects/updateCanvas'
-import cellsMerge from '../utils/cellsMerge'
 
 const DropPattern: Action<
   State,
@@ -23,20 +23,20 @@ const DropPattern: Action<
       ...state.machine,
       cells: state.stamps.selected
         ? cellsMerge(
-            state.machine.cells,
-            state.stamps.selected,
-            xOffset,
-            yOffset,
-          )
-        : state.machine.cells
-    }
+          state.machine.cells,
+          state.stamps.selected,
+          xOffset,
+          yOffset,
+        )
+        : state.machine.cells,
+    },
   }
 
   return [
     newState,
-    [updateCanvas, newState]
+    [updateCanvas, newState],
   ]
 }
- 
+
 
 export default DropPattern

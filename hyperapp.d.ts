@@ -63,8 +63,8 @@ export type Dispatchable<State extends AnyState, DPayload = void, CPayload = any
     | [State, ...Effect<State>[]]
     | ([Action<State, CPayload>, PayloadCreator<DPayload, CPayload>])
     | ([Action<State, CPayload>, CPayload])
-    | Action<State, void>      // (state) => ({ ... }) | (state) => ([{ ... }, effect1, ...])
-    | Action<State, DPayload>  // (state, data) => ({ ... })  | (state, data) => ([{ ... }, effect1, ...])
+    | Action<State, void> // (state) => ({ ... }) | (state) => ([{ ... }, effect1, ...])
+    | Action<State, DPayload> // (state, data) => ({ ... })  | (state, data) => ([{ ... }, effect1, ...])
 );
 
 /** Usable to 1st argument of `dispatch`. make strict for `init` (initial state and default payload are always undefined)

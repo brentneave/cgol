@@ -1,14 +1,12 @@
-import { View } from 'hyperapp'
-import { State } from '/types'
-
-import StampPanelOpen from '../actions/StampPanelOpen'
-
 import AppLayout from '/components/AppLayout'
 import CellsCursor from '/components/CellsCursor'
 import ControlBar from '/components/ControlBar'
 import ControlButton from '/components/ControlButton'
 import RasterCells from '/components/RasterCells'
 import StampPanel from '/components/StampPanel'
+import StampPanelOpen from '../actions/StampPanelOpen'
+import {State} from '/types'
+import {View} from 'hyperapp'
 
 const App: View<State> = ({
   machine,
@@ -19,7 +17,7 @@ const App: View<State> = ({
   <AppLayout
     canvas={
       <RasterCells
-        {...{ machine, render, stamps }}
+        {...{machine, render, stamps}}
       />
     }
     stampPanel={
@@ -27,22 +25,22 @@ const App: View<State> = ({
     }
     bottomLeft={
       <ControlButton
-        onclick={[StampPanelOpen, { isOpen: !stamps.isPanelOpen }]}
+        onclick={[StampPanelOpen, {isOpen: !stamps.isPanelOpen}]}
         label={stamps.isPanelOpen ? 'Close' : 'Stamp'}
       />
     }
     bottomRight={
       <ControlBar
-        isRunning= {machine.isRunning}
+        isRunning={machine.isRunning}
       />
     }
     cursor={
       stamps.isDragging
         ? <CellsCursor
-            cellSize={machine.cellSize}
-            draggingPattern={stamps.selected}
-            mouse={mouse}
-          />
+          cellSize={machine.cellSize}
+          draggingPattern={stamps.selected}
+          mouse={mouse}
+        />
         : null
     }
   />

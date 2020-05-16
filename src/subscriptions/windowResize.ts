@@ -1,11 +1,11 @@
-import { Action } from 'hyperapp'
-import { State } from '/types'
+import {Action} from 'hyperapp'
+import {State} from '/types'
 
 const windowResize = (
-  dispatch, 
-  { 
-    action, 
-    canvasId 
+  dispatch,
+  {
+    action,
+    canvasId,
   }: {
     action: Action<State>;
     canvasId: string;
@@ -28,7 +28,7 @@ const windowResize = (
           action,
           {
             height,
-            width
+            width,
           }
         )
         lastHeight = height

@@ -1,5 +1,5 @@
-import { Action } from 'hyperapp'
-import { State } from '/types'
+import {Action} from 'hyperapp'
+import {State} from '/types'
 
 const DragPatternCancel: Action<State> = state => ({
   ...state,

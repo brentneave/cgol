@@ -1,9 +1,8 @@
-import { Action } from 'hyperapp'
+import {Grid, State} from '/types'
+import {Action} from 'hyperapp'
 
-import { Grid, State } from '/types'
-
-const DragPattern: Action<State, Grid> = 
-  ( state, stamp ) => ({
+const DragPattern: Action<State, Grid> =
+  (state, stamp) => ({
     ...state,
     stamps: {
       ...state.stamps,

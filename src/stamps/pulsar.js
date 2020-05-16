@@ -1,4 +1,4 @@
-import { cellsRotate90 } from '/utils/cellsRotate.ts'
+import {cellsRotate90} from '/utils/cellsRotate'
 
 const pulsar = cellsRotate90([
   [0, 0, 1, 1, 1, 0, 0, 0, 1, 1, 1, 0, 0],
@@ -13,7 +13,7 @@ const pulsar = cellsRotate90([
   [1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1],
   [1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1],
   [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-  [0, 0, 1, 1, 1, 0, 0, 0, 1, 1, 1, 0, 0]
+  [0, 0, 1, 1, 1, 0, 0, 0, 1, 1, 1, 0, 0],
 ])
 
 export default pulsar

@@ -1,8 +1,6 @@
-import { Component } from 'hyperapp'
-import { Grid, Machine, Render, Stamps } from '/types'
-
+import {Grid, Machine, Render, Stamps} from '/types'
+import {Component} from 'hyperapp'
 import DropPattern from '/actions/DropPattern'
-
 import styles from './styles.css'
 
 const RasterCells: Component<{
@@ -21,13 +19,13 @@ const RasterCells: Component<{
     height={machine.cells[0].length * machine.cellSize}
     onmousedown={
       stamps.isDragging
-      ? [
+        ? [
           DropPattern,
           ({
-            offsetX, 
-            offsetY
+            offsetX,
+            offsetY,
           }: {
-            offsetX: number; 
+            offsetX: number;
             offsetY: number;
           }): {
             pattern: Grid;
@@ -37,9 +35,9 @@ const RasterCells: Component<{
             pattern: stamps.selected,
             xOffset: Math.round(offsetX / machine.cellSize),
             yOffset: Math.round(offsetY / machine.cellSize),
-          })
+          }),
         ]
-      : null
+        : null
     }
   />
 
