@@ -1,20 +1,20 @@
-import {Grid, Machine, Render, Stamps} from '/types'
+import {Grid, Layer, Machine, Stamps} from '/types'
 import {Component} from 'hyperapp'
 import DropPattern from '/actions/DropPattern'
 import styles from './styles.css'
 
 const RasterCells: Component<{
   machine: Machine;
-  render: Render;
+  layer: Layer;
   stamps: Stamps;
 }> = ({
   machine,
-  render,
+  layer,
   stamps,
 }) =>
   <canvas
     class={styles.rasterCells}
-    id={render.canvasId}
+    id={layer.id}
     width={machine.cells.length * machine.cellSize}
     height={machine.cells[0].length * machine.cellSize}
     onmousedown={

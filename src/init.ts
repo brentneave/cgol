@@ -13,7 +13,7 @@ const gosperGliderGun270 = cellsRotate270(gosperGliderGun)
 const init: State = {
   machine: {
     ...cellsCreate({chance: 0.2}),
-    cellSize: 3,
+    cellSize: 4,
     isRunning: true,
   },
   stamps: {
@@ -29,11 +29,17 @@ const init: State = {
     isDragging: true,
     isPanelOpen: false,
   },
-  render: {
-    canvasId: 'canvas',
-    foregroundColor: 'black',
-    backgroundColor: 'white',
-  },
+  layers: [{
+    id: 'layer-0',
+    foregroundColor: 'rgba(255, 200, 0, 1)',
+    backgroundColor: 'rgba(255, 60, 0, 0.1)',
+    trails: true,
+  }, {
+    id: 'layer-1',
+    foregroundColor: 'rgba(255, 255, 255, 1)',
+    backgroundColor: 'rgba(0,0,0,0)',
+    trails: false,
+  }],
   mouse: {position: {x: 0, y: 0}},
 }
 

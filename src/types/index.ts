@@ -17,10 +17,11 @@ export type Mouse = {
 
 export type Neighbours = Coord[][][]
 
-export type Render = {
-  canvasId: string;
-  foregroundColor: number | string;
-  backgroundColor: number | string;
+export type Layer = {
+  backgroundColor: string;
+  foregroundColor: string;
+  id: string;
+  trails: boolean;
 }
 
 export type Stamps = {
@@ -33,6 +34,6 @@ export type Stamps = {
 export type State = {
   machine: Machine;
   stamps: Stamps;
-  render: Render;
+  layers: Layer[];
   mouse: Mouse;
 }

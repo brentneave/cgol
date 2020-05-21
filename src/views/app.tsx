@@ -11,14 +11,21 @@ import {View} from 'hyperapp'
 const App: View<State> = ({
   machine,
   mouse,
-  render,
+  layers,
   stamps,
 }) =>
   <AppLayout
     canvas={
-      <RasterCells
-        {...{machine, render, stamps}}
-      />
+      <div>
+        {
+          layers.map(
+            layer =>
+              <RasterCells
+                {...{machine, layer, stamps}}
+              />
+          )
+        }
+      </div>
     }
     stampPanel={
       <StampPanel stamps={stamps} />

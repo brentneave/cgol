@@ -9,37 +9,44 @@ const updateCanvas: f = (
   dispatch,
   {
     machine,
-    render,
+    layers,
   }
 ) => {
-  const canvas = document.getElementById(render.canvasId) as HTMLCanvasElement
-  if (!canvas) return
-
-  const context = canvas.getContext('2d')
-
-
-  context.fillStyle = 'rgba(255, 60, 0, 0.2)'
-  context.fillRect(
-    0,
-    0,
-    machine.cellSize * machine.cells.length,
-    machine.cellSize * machine.cells[0].length
-  )
-
-  context.fillStyle = 'rgba(64, 15, 0, 0.8)'
-
-  machine.cells.forEach(
-    (column, x) => {
-      column.forEach(
-        (cell, y) => {
-          if (cell) {
-            context.fillRect(
-              machine.cellSize * x,
-              machine.cellSize * y,
-              machine.cellSize,
-              machine.cellSize,
-            )
-          }
+  layers.forEach(
+    layer => {
+      const canvas = document.getElementById(layer.id) as HTMLCanvasElement
+      if (!canvas) return
+      const context = canvas.getContext('2d')
+      context.fillStyle = layer.backgroundColor
+      if (!layer.trails) {
+        context.clearRect(
+          0,
+          0,
+          machine.cellSize * machine.cells.length,
+          machine.cellSize * machine.cells[0].length
+        )
+      }
+      context.fillRect(
+        0,
+        0,
+        machine.cellSize * machine.cells.length,
+        machine.cellSize * machine.cells[0].length
+      )
+      context.fillStyle = layer.foregroundColor
+      machine.cells.forEach(
+        (column, x) => {
+          column.forEach(
+            (cell, y) => {
+              if (cell) {
+                context.fillRect(
+                  machine.cellSize * x,
+                  machine.cellSize * y,
+                  machine.cellSize,
+                  machine.cellSize,
+                )
+              }
+            }
+          )
         }
       )
     }
