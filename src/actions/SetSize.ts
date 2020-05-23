@@ -23,21 +23,21 @@ const SetSize: Action<
       cells: cellsMerge(
         cellsCreate({
           chance: 0,
-          width: Math.ceil(width / state.machine.cellSize),
-          height: Math.ceil(height / state.machine.cellSize),
+          width: Math.ceil(width / state.canvas.scale),
+          height: Math.ceil(height / state.canvas.scale),
         }).cells,
         state.machine.cells,
         Math.round(
-          ((width / state.machine.cellSize) - state.machine.cells.length) / 2
+          ((width / state.canvas.scale) - state.machine.cells.length) / 2
         ),
         Math.round(
-          ((height / state.machine.cellSize) - state.machine.cells[0].length) / 2
+          ((height / state.canvas.scale) - state.machine.cells[0].length) / 2
         ),
       ),
       neighbours: cellsCreate({
         chance: 0,
-        width: Math.ceil(width / state.machine.cellSize),
-        height: Math.ceil(height / state.machine.cellSize),
+        width: Math.ceil(width / state.canvas.scale),
+        height: Math.ceil(height / state.canvas.scale),
       }).neighbours,
     },
   }

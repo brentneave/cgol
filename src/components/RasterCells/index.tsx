@@ -1,22 +1,26 @@
-import {Grid, Layer, Machine, Stamps} from '/types'
+import {Canvas, Grid, Machine, Stamps} from '/types'
 import {Component} from 'hyperapp'
 import DropPattern from '/actions/DropPattern'
 import styles from './styles.css'
 
 const RasterCells: Component<{
+  canvas: Canvas;
   machine: Machine;
-  layer: Layer;
   stamps: Stamps;
 }> = ({
+  canvas,
   machine,
-  layer,
   stamps,
 }) =>
   <canvas
     class={styles.rasterCells}
-    id={layer.id}
-    width={machine.cells.length * machine.cellSize}
-    height={machine.cells[0].length * machine.cellSize}
+    id={canvas.id}
+    style={{
+      width: `${machine.cells.length * canvas.scale}px`,
+      height: `${machine.cells[0].length * canvas.scale}px`,
+    }}
+    width={machine.cells.length}
+    height={machine.cells[0].length}
     onmousedown={
       stamps.isDragging
         ? [
@@ -33,8 +37,8 @@ const RasterCells: Component<{
             yOffset: number;
           } => ({
             pattern: stamps.selected,
-            xOffset: Math.round(offsetX / machine.cellSize),
-            yOffset: Math.round(offsetY / machine.cellSize),
+            xOffset: Math.round(offsetX / canvas.scale),
+            yOffset: Math.round(offsetY / canvas.scale),
           }),
         ]
         : null

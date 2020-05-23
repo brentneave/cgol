@@ -36,8 +36,9 @@ const cellsCreate: fCellsCreate = ({
   chance = 0,
   width = 480,
   height = 270,
-}) =>
-  addNeighbours(
+}) => {
+  console.log('cellsCreate', chance, width, height)
+  return addNeighbours(
     [...Array(width)]
       .fill([])
       .map(
@@ -49,5 +50,5 @@ const cellsCreate: fCellsCreate = ({
             )
       )
   )
-
+}
 export default cellsCreate

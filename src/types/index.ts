@@ -6,7 +6,6 @@ export type Grid = Cell[][]
 
 export type Machine = {
   cells: Grid;
-  cellSize: number;
   isRunning: boolean;
   neighbours: Neighbours;
 }
@@ -17,11 +16,16 @@ export type Mouse = {
 
 export type Neighbours = Coord[][][]
 
+export type RGBA = { r: number; g: number; b: number; a: number}
+
 export type Layer = {
-  backgroundColor: string;
-  foregroundColor: string;
+  foregroundColor: RGBA;
+  trailAlpha: number;
+}
+
+export type Canvas = {
   id: string;
-  trails: boolean;
+  scale: number;
 }
 
 export type Stamps = {
@@ -32,6 +36,7 @@ export type Stamps = {
 }
 
 export type State = {
+  canvas: Canvas;
   machine: Machine;
   stamps: Stamps;
   layers: Layer[];
