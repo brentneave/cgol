@@ -3,12 +3,8 @@ import {State} from '/types'
 
 const windowResize = (
   dispatch,
-  {
-    action,
-    canvasId,
-  }: {
+  {action}: {
     action: Action<State>;
-    canvasId: string;
   }
 ): () => void => {
   let running = true
@@ -17,23 +13,19 @@ const windowResize = (
   let lastWidth = 0
 
   const onResize = (): void => {
-    const canvas = document.getElementById(canvasId)
+    const width = Number(window.innerWidth)
+    const height = Number(window.innerHeight)
 
-    if (canvas) {
-      const width = Number(window.innerWidth)
-      const height = Number(window.innerHeight)
-
-      if (width !== lastWidth || height !== lastHeight) {
-        dispatch(
-          action,
-          {
-            height,
-            width,
-          }
-        )
-        lastHeight = height
-        lastWidth = width
-      }
+    if (width !== lastWidth || height !== lastHeight) {
+      dispatch(
+        action,
+        {
+          height,
+          width,
+        }
+      )
+      lastHeight = height
+      lastWidth = width
     }
 
     if (running) window.requestAnimationFrame(onResize)

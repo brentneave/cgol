@@ -11,13 +11,10 @@ const gosperGliderGun180 = cellsRotate180(gosperGliderGun)
 const gosperGliderGun270 = cellsRotate270(gosperGliderGun)
 
 const init: State = {
-  canvas: {
-    id: 'canvas',
-    scale: 4,
-  },
   machine: {
     ...cellsCreate({chance: 0.2}),
     isRunning: true,
+    scale: 4,
   },
   stamps: {
     available: [
@@ -34,12 +31,14 @@ const init: State = {
   },
   layers: [
     {
+      id: 'layer0',
       foregroundColor: {r: 255, g: 255, b: 255, a: 255},
       trailAlpha: 0.9,
     },
     {
-      foregroundColor: {r: 0, g: 0, b: 0, a: 255},
-      trailAlpha: 0.95,
+      id: 'layer1',
+      foregroundColor: {r: 100, g: 0, b: 100, a: 255},
+      trailAlpha: 0,
     },
   ],
   mouse: {position: {x: 0, y: 0}},

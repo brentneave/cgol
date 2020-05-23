@@ -9,7 +9,7 @@ import {State} from '/types'
 import {View} from 'hyperapp'
 
 const App: View<State> = ({
-  canvas,
+  layers,
   machine,
   mouse,
   stamps,
@@ -17,9 +17,14 @@ const App: View<State> = ({
   <AppLayout
     canvas={
       <div>
-        <RasterCells
-          {...{machine, canvas, stamps}}
-        />
+        {
+          layers.map(
+            layer =>
+              <RasterCells
+                {...{layer, machine, stamps}}
+              />
+          )
+        }
       </div>
     }
     stampPanel={
@@ -39,7 +44,7 @@ const App: View<State> = ({
     cursor={
       stamps.isDragging
         ? <CellsCursor
-          cellSize={canvas.scale}
+          cellSize={machine.scale}
           draggingPattern={stamps.selected}
           mouse={mouse}
         />

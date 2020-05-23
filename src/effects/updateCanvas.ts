@@ -1,26 +1,4 @@
-import {Layer, RGBA, State} from '/types'
-
-let images: ImageData[] = []
-let lastW = 0
-let lastH = 0
-
-const updateImages = (
-  w: number,
-  h: number,
-  layers: Layer[]
-): void => {
-  if (
-    w !== lastW
-    || h !== lastH
-    || layers.length !== images.length
-  ) {
-    lastW = w
-    lastH = h
-    images = layers.map(
-      (): ImageData => new ImageData(w, h)
-    )
-  }
-}
+import {Cell, Layer, RGBA, State} from '/types'
 
 const getColorIndicesForCoord = (
   x: number,
@@ -59,29 +37,29 @@ const multiplyAlpha = (
 const updateCanvas = (
   dispatch,
   {
-    canvas,
     machine,
     layers,
   }: State
 ): void => {
   const w = machine.cells.length
   const h = machine.cells[0].length
-  const canvasElement = document.getElementById(canvas.id) as HTMLCanvasElement
-  if (!canvasElement) return
-
-  updateImages(w, h, layers)
-
-  const context = canvasElement.getContext('2d')
+  let canvas: HTMLCanvasElement
+  let context: CanvasRenderingContext2D
+  let imageData: ImageData
 
   layers.forEach(
-    (layer, i) => {
+    (layer: Layer): void => {
+      canvas = document.getElementById(layer.id) as HTMLCanvasElement
+      if (!canvas) return
+      context = canvas.getContext('2d')
+      imageData = context.getImageData(0, 0, w, h)
       machine.cells.forEach(
-        (column, x) => {
+        (column: Cell[], x: number): void => {
           column.forEach(
-            (cell, y) => {
+            (cell: Cell, y: number): void => {
               if (cell) {
                 setColor(
-                  images[i],
+                  imageData,
                   x,
                   y,
                   w,
@@ -89,7 +67,7 @@ const updateCanvas = (
                 )
               } else {
                 multiplyAlpha(
-                  images[i],
+                  imageData,
                   x,
                   y,
                   w,
@@ -100,7 +78,7 @@ const updateCanvas = (
           )
         }
       )
-      context.putImageData(images[i], 0, 0)
+      context.putImageData(imageData, 0, 0)
     }
   )
 }

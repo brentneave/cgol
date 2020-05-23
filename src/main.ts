@@ -19,7 +19,7 @@ app({
     state => [
       state.machine.isRunning && [animationFrame, {action: Tick} ],
       [mouseMove, {action: MouseMoved}],
-      [windowResize, {action: SetSize, canvasId: state.canvas.id}],
+      [windowResize, {action: SetSize}],
     ],
 
 })
