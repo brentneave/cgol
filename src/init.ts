@@ -5,6 +5,7 @@ import cellsCreate from '/utils/cellsCreate'
 import gosperGliderGun from '/stamps/gosperGliderGun'
 import pulsar from '/stamps/pulsar'
 import rPentomino from '/stamps/rPentomino'
+import sidewinder from '/stamps/sidewinder'
 
 const gosperGliderGun90 = cellsRotate90(gosperGliderGun)
 const gosperGliderGun180 = cellsRotate180(gosperGliderGun)
@@ -19,12 +20,13 @@ const init: State = {
   stamps: {
     available: [
       gosperGliderGun,
-      pulsar,
-      rPentomino,
-      TwoEngineCorderShip,
       gosperGliderGun90,
       gosperGliderGun180,
       gosperGliderGun270,
+      pulsar,
+      rPentomino,
+      sidewinder,
+      TwoEngineCorderShip,
     ],
     isDragging: true,
     isPanelOpen: false,
