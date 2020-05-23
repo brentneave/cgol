@@ -1,38 +1,4 @@
-import {Cell, Layer, RGBA, State} from '/types'
-
-const getColorIndicesForCoord = (
-  x: number,
-  y: number,
-  w: number
-): [number, number, number, number] => {
-  const r = y * (w * 4) + x * 4
-  return [r, r + 1, r + 2, r + 3]
-}
-
-const setColor = (
-  imageData: ImageData,
-  x: number,
-  y: number,
-  w: number,
-  rgba: RGBA
-): void => {
-  const indices = getColorIndicesForCoord(x, y, w)
-  imageData.data[indices[0]] = rgba.r
-  imageData.data[indices[1]] = rgba.g
-  imageData.data[indices[2]] = rgba.b
-  imageData.data[indices[3]] = rgba.a
-}
-
-const multiplyAlpha = (
-  imageData: ImageData,
-  x: number,
-  y: number,
-  w: number,
-  a: number
-): void => {
-  const indices = getColorIndicesForCoord(x, y, w)
-  imageData.data[indices[3]] *= a
-}
+import {Cell, Layer, State} from '/types'
 
 const updateCanvas = (
   dispatch,
@@ -46,6 +12,7 @@ const updateCanvas = (
   let canvas: HTMLCanvasElement
   let context: CanvasRenderingContext2D
   let imageData: ImageData
+  let pixelIndex: number
 
   layers.forEach(
     (layer: Layer): void => {
@@ -57,22 +24,16 @@ const updateCanvas = (
         (column: Cell[], x: number): void => {
           column.forEach(
             (cell: Cell, y: number): void => {
+              pixelIndex = y * (w * 4) + x * 4
               if (cell) {
-                setColor(
-                  imageData,
-                  x,
-                  y,
-                  w,
-                  layer.foregroundColor
-                )
+                // set pixel to layer foreground color
+                imageData.data[pixelIndex] = layer.foregroundColor.r
+                imageData.data[pixelIndex + 1] = layer.foregroundColor.g
+                imageData.data[pixelIndex + 2] = layer.foregroundColor.b
+                imageData.data[pixelIndex + 3] = layer.foregroundColor.a
               } else {
-                multiplyAlpha(
-                  imageData,
-                  x,
-                  y,
-                  w,
-                  layer.trailAlpha
-                )
+                // multiply pixel alpha by layer trail alpha value
+                imageData.data[pixelIndex + 3] *= layer.trailAlpha
               }
             }
           )
