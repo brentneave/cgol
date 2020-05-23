@@ -1,5 +1,10 @@
 import {Cell, Layer, State} from '/types'
 
+let canvas: HTMLCanvasElement
+let context: CanvasRenderingContext2D
+let imageData: ImageData
+let pixelIndex: number
+
 const updateCanvas = (
   dispatch,
   {
@@ -9,11 +14,6 @@ const updateCanvas = (
 ): void => {
   const w = machine.cells.length
   const h = machine.cells[0].length
-  let canvas: HTMLCanvasElement
-  let context: CanvasRenderingContext2D
-  let imageData: ImageData
-  let pixelIndex: number
-
   layers.forEach(
     (layer: Layer): void => {
       canvas = document.getElementById(layer.id) as HTMLCanvasElement
@@ -33,7 +33,7 @@ const updateCanvas = (
                 imageData.data[pixelIndex + 3] = layer.foregroundColor.a
               } else {
                 // multiply pixel alpha by layer trail alpha value
-                imageData.data[pixelIndex + 3] *= layer.trailAlpha
+                imageData.data[pixelIndex + 3] -= layer.trailAlpha
               }
             }
           )

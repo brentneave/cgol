@@ -14,7 +14,7 @@ const init: State = {
   machine: {
     ...cellsCreate({chance: 0.2}),
     isRunning: true,
-    scale: 4,
+    scale: 5,
   },
   stamps: {
     available: [
@@ -32,13 +32,18 @@ const init: State = {
   layers: [
     {
       id: 'layer0',
-      foregroundColor: {r: 0, g: 0, b: 0, a: 95},
-      trailAlpha: 0.93,
+      foregroundColor: {r: 0, g: 34, b: 255, a: 255},
+      trailAlpha: 1,
+    },
+    {
+      id: 'layer1',
+      foregroundColor: {r: 0, g: 224, b: 255, a: 255},
+      trailAlpha: 4,
     },
     {
       id: 'layer2',
       foregroundColor: {r: 255, g: 255, b: 255, a: 255},
-      trailAlpha: 0,
+      trailAlpha: 255,
     },
   ],
   mouse: {position: {x: 0, y: 0}},
