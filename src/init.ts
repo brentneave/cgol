@@ -34,12 +34,12 @@ const init: State = {
   layers: [
     {
       id: 'layer0',
-      foregroundColor: {r: 0, g: 34, b: 255, a: 255},
+      foregroundColor: {r: 0, g: 31, b: 255, a: 255},
       trailAlpha: 1,
     },
     {
       id: 'layer1',
-      foregroundColor: {r: 0, g: 224, b: 255, a: 255},
+      foregroundColor: {r: 0, g: 191, b: 255, a: 255},
       trailAlpha: 4,
     },
     {
