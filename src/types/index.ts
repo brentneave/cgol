@@ -18,6 +18,7 @@ export type Mouse = {
 export type Neighbours = Coord[][][]
 
 export type RGBA = { r: number; g: number; b: number; a: number}
+export type OptionalRGBA = { r?: number; g?: number; b?: number; a?: number}
 
 export type Layer = {
   id: string;

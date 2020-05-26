@@ -36,19 +36,16 @@ const cellsCreate: fCellsCreate = ({
   chance = 0,
   width = 480,
   height = 270,
-}) => {
-  console.log('cellsCreate', chance, width, height)
-  return addNeighbours(
-    [...Array(width)]
-      .fill([])
-      .map(
-        () =>
-          [...Array(height)]
-            .fill(false)
-            .map(
-              () => Math.random() < chance
-            )
-      )
-  )
-}
+}) => addNeighbours(
+  [...Array(width)]
+    .fill([])
+    .map(
+      () =>
+        [...Array(height)]
+          .fill(false)
+          .map(
+            () => Math.random() < chance
+          )
+    )
+)
 export default cellsCreate

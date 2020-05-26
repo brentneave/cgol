@@ -28,7 +28,7 @@ const App: View<State> = ({
       </div>
     }
     stampPanel={
-      <StampPanel stamps={stamps} />
+      <StampPanel layers={layers} stamps={stamps} />
     }
     bottomLeft={
       <ControlButton
