@@ -4,6 +4,8 @@ let canvas: HTMLCanvasElement
 let context: CanvasRenderingContext2D
 let imageData: ImageData
 let pixelIndex: number
+let w: number
+let h: number
 
 const updateCanvas = (
   dispatch,
@@ -12,8 +14,8 @@ const updateCanvas = (
     layers,
   }: State
 ): void => {
-  const w = machine.cells.length
-  const h = machine.cells[0].length
+  w = machine.cells.length
+  h = machine.cells[0].length
   layers.forEach(
     (layer: Layer): void => {
       canvas = document.getElementById(layer.id) as HTMLCanvasElement

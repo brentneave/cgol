@@ -13,7 +13,7 @@ const gosperGliderGun270 = cellsRotate270(gosperGliderGun)
 
 const init: State = {
   machine: {
-    ...cellsCreate({chance: 0.2}),
+    ...cellsCreate({chance: 0.1}),
     isRunning: true,
     scale: 5,
   },
@@ -32,6 +32,45 @@ const init: State = {
     isPanelOpen: false,
   },
   layers: [
+    // {
+    //   id: 'layer0',
+    //   foregroundColor: {r: 110, g: 75, b: 0, a: 255},
+    //   trailAlpha: 1,
+    // },
+    // {
+    //   id: 'layer1',
+    //   foregroundColor: {r: 92, g: 200, b: 58, a: 255},
+    //   trailAlpha: 4,
+    // },
+    // {
+    //   id: 'layer3',
+    //   foregroundColor: {r: 255, g: 255, b: 255, a: 255},
+    //   trailAlpha: 255,
+    // },
+
+
+    // {
+    //   id: 'layer0',
+    //   foregroundColor: {r: 230, g: 120, b: 66, a: 255},
+    //   trailAlpha: 1,
+    // },
+    // {
+    //   id: 'layer1',
+    //   foregroundColor: {r: 141, g: 215, b: 229, a: 255},
+    //   trailAlpha: 4,
+    // },
+    // {
+    //   id: 'layer2',
+    //   foregroundColor: {r: 253, g: 244, b: 167, a: 255},
+    //   trailAlpha: 30,
+    // },
+    // {
+    //   id: 'layer3',
+    //   foregroundColor: {r: 255, g: 255, b: 255, a: 255},
+    //   trailAlpha: 255,
+    // },
+
+
     {
       id: 'layer0',
       foregroundColor: {r: 0, g: 31, b: 255, a: 255},
